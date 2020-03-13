@@ -21,7 +21,5 @@ public interface LoginMapper {
     @Select("SELECT * FROM t_user WHERE username=#{username}")
     public User findUserByUsername(String username);
 
-    @Select("SELECT * FROM t_user WHERE password=#{password}")
-    public User findUserByPassword(String password);
 
 }

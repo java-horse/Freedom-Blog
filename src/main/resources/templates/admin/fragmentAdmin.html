@@ -31,8 +31,8 @@
     <script th:src="@{/js/emoji.js}"></script>
     <script th:src="@{/js/activate-power-mode.js}"></script>
     <script>
-        POWERMODE.colorful = true; // 控制开启/开启礼花特效
-        POWERMODE.shake = false; // 控制开启/关闭屏幕震动特效
+        POWERMODE.colorful = true; // 控制开启/关闭礼花特效
+        POWERMODE.shake = false;  //控制开启/关闭屏幕震动（开关好像失效了）
         document.body.addEventListener('input', POWERMODE);
     </script>
 
@@ -42,7 +42,7 @@
             $.ajax({
                 url:"/admin/userPass",
                 type:"POST",
-                data:{"username":$("#user").val()},
+                data:{"username":$("#user").val(), "password":$("#pass").val()},
                 success:function (data) {
                     if ("用户名正确" == data.toString()) {
                         $("#userInfo").css("color","teal");
@@ -60,7 +60,7 @@
             $.ajax({
                 url:"/admin/userPass",
                 type:"POST",
-                data:{"password":$("#pass").val()},
+                data:{"username":$("#user").val(), "password":$("#pass").val()},
                 success:function (data) {
                     if ("密码正确" == data.toString()) {
                         $("#passInfo").css("color","teal");

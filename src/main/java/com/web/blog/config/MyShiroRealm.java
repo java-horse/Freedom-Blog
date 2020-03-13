@@ -10,6 +10,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -34,7 +35,7 @@ public class MyShiroRealm extends AuthorizingRealm {
 
         /*获取当前登录用户*/
         User currentUser = (User) subject.getPrincipal();
-        /*授权当前用户相关角色*/
+        /*授权当前用户相关角色（非常不合理，本次数据库设计没有涉及到角色和权限等，只是自己添加的）*/
         info.addStringPermission(currentUser.getPerms());
 
         return info;
@@ -60,7 +61,9 @@ public class MyShiroRealm extends AuthorizingRealm {
         Session session = subject.getSession();
         session.setAttribute("loginUser", currentUser);
 
-        /*密码Shiro框架自己认证,（自定义传入MD5加密）*/
-        return new SimpleAuthenticationInfo(currentUser, currentUser.getPassword(), "");
+        //自定义盐值
+        ByteSource salt = ByteSource.Util.bytes(currentUser.getUsername());
+        /*密码Shiro框架自己认证,（MyShiroConfig配置类中自定义传入MD5加密）*/
+        return new SimpleAuthenticationInfo(currentUser, currentUser.getPassword(),salt, getName());
     }
 }

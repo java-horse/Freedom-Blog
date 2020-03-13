@@ -15,6 +15,5 @@ public interface LoginService {
      */
     public User findUserByUsername(String username);
 
-    public User findUserByPassword(String password);
 
 }

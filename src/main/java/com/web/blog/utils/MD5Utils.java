@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 public class MD5Utils {
 
     /**
-     * MD5加密类 （此博客系统未使用）
+     * MD5加密类 （此博客系统未使用此工具类，使用的是shiro内置的MD5盐值加密）
      * @param str 要加密的字符串
      * @return 加密后的字符串
      **/
@@ -35,7 +35,6 @@ public class MD5Utils {
             //32位加密
             return buf.toString();
             // 16位的加密
-            //return buf.toString().substring(8, 24);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             return null;

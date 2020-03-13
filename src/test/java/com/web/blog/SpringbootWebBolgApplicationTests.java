@@ -3,14 +3,19 @@ package com.web.blog;
 import com.web.blog.bean.Blog;
 import com.web.blog.bean.Tag;
 import com.web.blog.bean.Type;
-import com.web.blog.dto.*;
+import com.web.blog.dto.BlogDetail;
+import com.web.blog.dto.BlogIndexShow;
+import com.web.blog.dto.BlogRecommend;
+import com.web.blog.dto.BlogShow;
 import com.web.blog.mapper.BlogMapper;
-import com.web.blog.mapper.CommentMapper;
 import com.web.blog.mapper.TagMapper;
 import com.web.blog.service.BlogService;
+import com.web.blog.service.LoginService;
 import com.web.blog.service.TagService;
 import com.web.blog.service.TypeService;
-import com.web.blog.service.impl.CommentServiceImpl;
+import com.web.blog.utils.MD5ShiroUtils;
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,19 +32,16 @@ class SpringbootWebBolgApplicationTests {
     private BlogService blogService;
 
     @Autowired
-    private CommentMapper commentMapper;
-
-    @Autowired
     private BlogMapper blogMapper;
 
     @Autowired
     private TagMapper tagMapper;
 
     @Autowired
-    private CommentServiceImpl commentServiceImpl;
+    private TagService tagService;
 
     @Autowired
-    private TagService tagService;
+    private LoginService loginService;
 
 
     @Test
@@ -60,7 +62,7 @@ class SpringbootWebBolgApplicationTests {
 
     @Test
     public void test() {
-        System.out.println(new Random().nextInt(64)+800);
+        System.out.println(new Random().nextInt(64) + 800);
 
     }
 
@@ -130,7 +132,7 @@ class SpringbootWebBolgApplicationTests {
         list.add(6);
         list.add(7);
         LinkedHashMap<String, Object> map = new LinkedHashMap<>();
-        map.put("ids",list);
+        map.put("ids", list);
         List<Blog> blogs = blogMapper.findBlogsByforEach(map);
         for (Blog blog : blogs) {
             System.out.println(blog);
@@ -140,11 +142,42 @@ class SpringbootWebBolgApplicationTests {
     @Test
     public void test010() {
         HashMap<String, Object> map = new HashMap<>();
-        map.put("title","Mybatis原来如此神奇");
-        map.put("flag","转载");
+        map.put("title", "Mybatis原来如此神奇");
+        map.put("flag", "转载");
         List<Blog> blogsByChoose = blogMapper.findBlogsByChoose(map);
         for (Blog blog : blogsByChoose) {
             System.out.println(blog);
+        }
+    }
+
+
+    /**
+     * 利用shiro的加密来生成密码
+     */
+    @Test
+    public void test011() {
+        //加密方式
+        String hashAlgorithmName = "MD5";
+        //加密次数
+        int hashInteractions = 1024;
+        //盐值
+        String salt = "mabin";
+        //原密码
+        String pwd = "mabin123";
+        //将得到的result放到数据库中就行了。
+        String result = new SimpleHash(hashAlgorithmName, pwd, ByteSource.Util.bytes(salt), hashInteractions).toHex();
+        String md5Code = MD5ShiroUtils.MD5Code(salt, pwd);
+        System.out.println("加密后的密码：" + result);
+        System.out.println(md5Code);
+        if (result.equals(md5Code)) {
+            System.out.println(true);
+        }
+    }
+
+    @Test
+    public void test12() {
+        if (loginService.findUserByUsername("mabin").getPassword().equals(MD5ShiroUtils.MD5Code("mabin", "mabin123"))) {
+            System.out.println("密码匹配成功");
         }
     }
 

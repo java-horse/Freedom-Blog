@@ -23,8 +23,4 @@ public class LoginServiceImpl implements LoginService {
        return loginMapper.findUserByUsername(username);
     }
 
-    @Override
-    public User findUserByPassword(String password) {
-        return loginMapper.findUserByPassword(password);
-    }
 }

@@ -2,6 +2,7 @@ package com.web.blog.controller.admin;
 
 import com.web.blog.service.LoginService;
 import com.web.blog.utils.KaptchaUtils;
+import com.web.blog.utils.MD5ShiroUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -94,8 +95,8 @@ public class LoginController {
             }
         }
         if (!"".equals(password) & password != null) {
-            if (loginService.findUserByPassword(password) != null) {
-                if (loginService.findUserByPassword(password).getPassword().equals(password)) {
+            if (loginService.findUserByUsername(username) != null) {
+                if (loginService.findUserByUsername(username).getPassword().equals(MD5ShiroUtils.MD5Code(username,password))) {
                     message = "密码正确";
                 }
             } else {
