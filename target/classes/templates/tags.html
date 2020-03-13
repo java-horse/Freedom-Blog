@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<div th:replace="fragment :: menu(3)"></div>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <!--header-->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">标签</h3>
+                </div>
+                <div class="right aligned column">
+                    共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${tags.size()}"> 14 </h2> 个
+                </div>
+            </div>
+        </div>
+
+        <div class="ui attached segment m-padded-tb-large">
+            <!--th:each的优先级最高，所以可以在each的前面使用${tag.id}-->
+            <a th:href="@{/tags/{id}(id=${tag.id})}" th:each="tag : ${tags}"
+               class="ui basic left pointing large label m-margin-tb-tiny" th:classappend="${tag.id == activeTypeId} ? 'teal'">
+                <span th:text="${tag.name}">方法论</span>
+                <div class="detail" th:text="${tag.blogs.size()}">4</div>
+            </a>
+        </div>
+
+        <div class="ui top attached teal segment">
+            <div class="ui padded vertical segment m-padded-tb-large m-mobile-lr-clear" th:each="blog : ${blogs.list}">
+                <div class="ui mobile reversed stackable grid">
+                    <div class="eleven wide column">
+                        <h3 class="ui header"><a th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black"
+                                                 th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
+                        <p class="m-text" th:text="${blog.description}">正确做好任何一件事情的前提是清晰,我们很多人很多时候根本没有对目标正确的定义......</p>
+                        <div class="ui stackable grid">
+                            <div class="row">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+                                        <div class="item">
+                                            <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.avatar}}" alt="头像"
+                                                 class="ui avatar image">
+                                            <div class="content"><a href="#" class="header" th:text="${blog.nickname}">马滨</a></div>
+                                        </div>
+                                        <div class="item">
+                                            <i class="calendar icon"></i> <span
+                                                th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm:ss')}">2017-10-01</span>
+                                        </div>
+                                        <div class="item">
+                                            <i class="eye icon"></i><span th:text="${blog.views}">2342</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right aligned five wide column">
+                                    <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin"
+                                       th:text="${blog.name}">认知升级</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <a href="#" class="ui basic left pointing label m-padded-mini m-text-thin"
+                                       th:each="tagName : ${blog.tags}"
+                                       th:classappend="${tagName.id == activeTypeId} ? 'teal'"
+                                       th:text="${tagName.name}">方法论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="five wide column">
+                        <br/>
+                        <br/>
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                            <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}" alt="博客首图"
+                                 class="ui rounded image"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="ui bottom attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <!--th:unless="${pageInfo.isFirstPage}" :除非它不是第一页-->
+                    <div class="item"><a class="ui mini teal basic button" th:unless="${blogs.isFirstPage}"
+                                         th:href="@{/tags(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:${pageInfo.pageNum})}">
+                        上一页</a>
+                    </div>
+                </div>
+                <div class="right aligned column">
+                    <div class="item"><a class="ui mini teal basic button" th:unless="${blogs.isLastPage}"
+                                         th:href="@{/tags(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pageNum}+1)}">
+                        下一页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<!--底部footer-->
+<div th:replace="fragment :: footer"></div>
+
+<!--script-->
+<th:block th:replace="fragment :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+</script>
+</body>
+</html>

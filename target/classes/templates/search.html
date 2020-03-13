@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+
+<body>
+<!--导航-->
+<div th:replace="fragment :: menu(1)"></div>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <!--header-->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">搜索结果</h3>
+                </div>
+                <div class="right aligned column">
+                    共匹配到 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageInfo.total}"> 14 </h2> 个
+                </div>
+            </div>
+        </div>
+
+        <div class="ui top attached teal segment">
+            <div class="ui padded vertical segment m-padded-tb-large" th:each="blogSearch : ${pageInfo.list}">
+                <div class="ui middle aligned mobile reversed stackable grid">
+                    <div class="eleven wide column">
+                        <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blogSearch.id})}" target="_blank" class="m-black"
+                                                 th:text="${blogSearch.title}">你真的理解什么是财富自由吗?</a></h3>
+                        <p class="m-text" th:text="${blogSearch.description} + '......'">
+                            正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义......</p>
+                        <div class="ui grid">
+                            <div class="eleven wide column">
+                                <div class="ui mini horizontal link list">
+                                    <div class="item">
+                                        <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blogSearch.avatar}}" alt="用户头像"
+                                             class="ui avatar image">
+                                        <div class="content"><a href="#" class="header" th:text="${blogSearch.nickname}">马滨</a></div>
+                                    </div>
+                                    <div class="item">
+                                        <i class="calendar icon"></i><span
+                                            th:text="${#dates.format(blogSearch.updateTime,'yyyy-MM-dd HH:mm:ss')}"></span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="eye icon"></i> <span th:text="${blogSearch.views}">2342</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right aligned five wide column">
+                                <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin"
+                                   th:text="${blogSearch.name}">认知升级</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <a href="#" th:href="@{/blog/{id}(id=${blogSearch.id})}" target="_blank">
+                            <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blogSearch.firstPicture}}" alt="博客首图"
+                                 class="ui rounded image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--footer-->
+        <div class="ui bottom attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <!--th:unless="${pageInfo.isFirstPage}" :除非它不是第一页-->
+                    <div class="item"><a class="ui mini teal basic button" th:unless="${pageInfo.isFirstPage}"
+                                         th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:${pageInfo.pageNum})}">
+                        上一页</a>
+                    </div>
+                </div>
+                <div class="right aligned column">
+                    <div class="item"><a class="ui mini teal basic button" th:unless="${pageInfo.isLastPage}"
+                                         th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pageNum}+1)}">
+                        下一页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <!--底部footer-->
+    <div th:replace="fragment :: footer"></div>
+
+    <!--script-->
+    <th:block th:replace="fragment :: script">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    </th:block>
+
+    <script>
+
+        $('.menu.toggle').click(function () {
+            $('.m-item').toggleClass('m-mobile-hide');
+        });
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.blog.mapper.CommentMapper">
+
+    <sql id="selectComment">
+        SELECT id, nickname, email, content, avatar, create_time, blog_id, parent_comment_id,admin_comment
+    </sql>
+
+    <insert id="saveComment" parameterType="com.web.blog.bean.Comment">
+        INSERT INTO t_comment (nickname, email, content, avatar, create_time, blog_id, parent_comment_id,admin_comment)
+        VALUES (#{nickname},#{email},#{content},#{avatar},NOW(),#{blogId},#{parentCommentId},#{adminComment});
+    </insert>
+
+    <select id="findByParentCommentId" resultType="com.web.blog.bean.Comment">
+        <include refid="selectComment"/>
+        FROM t_comment WHERE parent_comment_id = #{parentCommentId}
+    </select>
+
+    <select id="getCommentParentCommentId" parameterType="long" resultType="com.web.blog.bean.Comment">
+        <include refid="selectComment"/>
+        FROM t_comment
+        WHERE blog_id = #{blogId} ORDER BY create_time asc;
+    </select>
+
+    <select id="listComments" resultType="Comment">
+        SELECT tc.id,tc.nickname,tc.content FROM t_comment tc ORDER BY tc.create_time DESC
+    </select>
+
+    <delete id="deleteCommentById" parameterType="long">
+        DELETE FROM t_comment WHERE id=#{id}
+    </delete>
+
+    <!--    <resultMap id="commentMap" type="com.web.blog.bean.Comment">
+            <id property="id" column="id"></id>
+            <result property="nickname" column="nickname"></result>
+            <result property="email" column="email"></result>
+            <result property="content" column="content"></result>
+            <result property="avatar" column="avatar"></result>
+            <result property="createTime" column="create_time"></result>
+            <result property="blogId" column="blog_id"></result>
+            <result property="parentCommentId" column="parent_comment_id"></result>
+            <collection property="replyComments" javaType="java.util.List" column="id" select="getReplyComments"/>
+        </resultMap>
+        <select id="getReplyComments" parameterType="long" resultMap="commentMap">
+            SELECT * FROM t_comment WHERE parent_comment_id = #{parentId};
+        </select>-->
+
+
+</mapper>

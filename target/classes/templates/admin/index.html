@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragmentAdmin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<div th:replace="admin/fragmentAdmin :: menu(0)"></div>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui success large  message">
+            <h3 th:align="center">Welcome To Freedom</h3>
+            <p th:align="center">博主[[${session.loginUser.username}]]，欢迎回来！</p>
+        </div>
+        <img th:src="@{${image}}" alt="" class="ui rounded bordered fluid image">
+    </div>
+</div>
+<br>
+<br>
+<!--底部footer-->
+<div th:replace="admin/fragmentAdmin :: footer"></div>
+
+<!--script-->
+<th:block th:replace="admin/fragmentAdmin :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+</script>
+
+</body>
+</html>

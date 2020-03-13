@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragmentAdmin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<div th:replace="admin/fragmentAdmin :: menu(3)"></div>
+
+<div class="ui attached pointing menu">
+    <div class="ui container">
+        <div class="right menu">
+            <a th:href="@{/admin/tags/input}" class="item">新增</a>
+            <a th:href="@{/admin/tags}" class="teal active item">列表</a>
+        </div>
+    </div>
+</div>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${message}"></p>
+        </div>
+        <table class="ui celled teal table">
+            <thead>
+            <tr>
+                <th><a th:href="@{/admin/tags/input}" class="ui small left floated teal basic button">新增</a></th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tag,iterStat : ${pageInfo.list}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${tag.name}"></td>
+                <td>
+                    <a th:href="@{/admin/tags/{id}/update(id=${tag.id})}" class="ui mini teal basic button">编辑</a>
+                    <a th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="6">
+                    <div class="ui mini menu pagination" th:if="${pageInfo.pages} > 1" style="color: teal">
+                        <div class="item"><a th:href="@{/admin/tags}">首页</a></div>
+                        <div class="item" th:if="${!pageInfo.isFirstPage}">
+                            <a th:href="@{/admin/tags(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:${pageInfo.pageNum})}">上一页</a>
+                        </div>
+                        <div class="item" th:if="${!pageInfo.isLastPage}">
+                            <a th:href="@{/admin/tags(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pageNum}+1)}">
+                                下一页</a>
+                        </div>
+                        <div class="item"><a th:href="@{/admin/tags(pageNum=${pageInfo.pages})}">尾页</a></div>
+                    </div>
+                    <div class="ui mini segment m-inline-block" style="color: teal">
+                        <p>当前第<span th:text="${pageInfo.pageNum}"></span>页，总<span th:text="${pageInfo.pages}"></span>页，共<span
+                                th:text="${pageInfo.total}"></span>条记录</p>
+                    </div>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<br>
+<br>
+<!--底部footer-->
+<div th:replace="admin/fragmentAdmin :: footer"></div>
+
+<!--script-->
+<th:block th:replace="fragment :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
+
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+
+</script>
+</body>
+</html>

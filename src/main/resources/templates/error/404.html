@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>访问错误</title>
+</head>
+<body>
+<!--导航-->
+<div th:replace="fragment :: menu(0)"></div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-massive">
+        <div class="ui-container">
+            <h2>404</h2>
+            <p>对不起，您访问的页面不存在</p>
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<!--footer-->
+<th:block th:replace="fragment :: footer"/>
+
+
+</body>
+</html>

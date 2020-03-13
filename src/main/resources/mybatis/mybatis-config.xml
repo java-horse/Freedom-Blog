@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!--配置：开启驼峰命名法规则-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--配置：设置别名-->
+    <typeAliases>
+        <!--单个设置-->
+        <typeAlias type="com.web.blog.dto.BlogQuery" alias="blogQuery"/>
+        <!--批量设置-->
+        <package name="com.web.blog.bean"/>
+    </typeAliases>
+    
+</configuration>

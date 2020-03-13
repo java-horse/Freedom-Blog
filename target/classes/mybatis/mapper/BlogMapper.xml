@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.blog.mapper.BlogMapper">
+
+    <sql id="selectBlog">
+        SELECT b.id,b.title,b.update_time,b.recommend,b.type_id,t.name
+    </sql>
+
+    <select id="listBlog" resultType="blogQuery">
+        <include refid="selectBlog"/>
+        FROM t_blog b LEFT JOIN
+        t_type t ON b.type_id = t.id;
+    </select>
+
+    <select id="getBlogSearch" parameterType="com.web.blog.dto.BlogSearch" resultType="blogQuery">
+        <bind name="pattern" value="'%' + title + '%'"/>
+        <include refid="selectBlog"/>
+        FROM t_blog b ,t_type t
+        <where>
+            <if test="1 == 1">
+                b.type_id = t.id
+            </if>
+            <if test="typeId != null">
+                AND b.type_id = #{typeId}
+            </if>
+            <if test="title != null">
+                AND b.title LIKE #{pattern}
+            </if>
+            <if test="recommend != null">
+                AND b.recommend = #{recommendButtom}
+            </if>
+        </where>
+    </select>
+
+
+    <!--index-->
+
+    <sql id="selectBlogIndexShow">
+        SELECT b.id,b.title,b.description,b.views,b.first_picture,b.update_time,u.avatar,u.nickname,t.name
+    </sql>
+
+    <select id="getBlogIndexShow" resultType="com.web.blog.dto.BlogIndexShow">
+        <include refid="selectBlogIndexShow"/>
+        FROM t_blog b ,t_user u ,t_type t
+        WHERE b.type_id=t.id AND b.user_id=u.id;
+    </select>
+
+    <select id="getBlogIndexSearch" parameterType="string" resultType="com.web.blog.dto.BlogIndexShow">
+        <bind name="pattern" value="'%' + query + '%'"/>
+        <include refid="selectBlogIndexShow"/>
+        FROM t_blog b ,t_user u ,t_type t
+        <where>
+            <if test="query != null">
+                b.type_id=t.id AND b.user_id=u.id AND (b.title LIKE #{pattern} OR b.content LIKE #{pattern})
+                ORDER BY b.update_time desc
+            </if>
+        </where>
+    </select>
+
+
+    <select id="getBlogDetail" parameterType="long" resultType="com.web.blog.dto.BlogDetail">
+        select b.id,b.first_picture,b.flag,b.title,b.content,b.views,b.update_time,b.releaseComment,b.share_statement,
+               b.appreciation,b.tag_ids,
+               u.nickname,u.avatar
+        from blog.t_blog b,blog.t_user u
+        where b.user_id = u.id and b.id = #{id}
+
+    </select>
+
+    <!--归档-->
+
+    <select id="archivesBlogYear" resultType="string">
+        SELECT DATE_FORMAT (b.update_time,'%Y') AS `year` FROM t_blog b
+        GROUP BY `year`
+        ORDER BY `year` DESC ;
+        </select>
+
+    <select id="archivesListBlog" parameterType="string" resultType="com.web.blog.dto.BlogShow">
+        select * from t_blog b where DATE_FORMAT(b.update_time,'%Y') = #{year};
+    </select>
+
+    <!--动态sql练习-->
+    <select id="findBlogsByforEach" parameterType="map" resultType="Blog">
+        select tb.id,tb.title from t_blog tb
+        <where>
+            <!--
+                collection:指定输入对象中的集合属性
+                item:每次遍历生成的对象
+                open:开始遍历时的拼接字符串
+                close:结束时拼接的字符串
+                separator:遍历对象之间需要拼接的字符串
+                select * from blog where 1=1 and (id=1 or id=2 or id=3)
+            -->
+            <foreach collection="ids" item="id" open="and (" close=")" separator="or">
+                id=#{id}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="findBlogsByChoose" parameterType="map" resultType="Blog">
+        select tb.title,tb.flag from t_blog tb
+        <where>
+            <choose>
+                <when test="title != null">
+                    tb.title=#{title}
+                </when>
+                <when test="flag == '原创'">
+                    and tb.flag=#{flag}
+                </when>
+            </choose>
+        </where>
+    </select>
+
+</mapper>

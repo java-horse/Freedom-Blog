@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<!--头标签-->
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+    <!--引入Markdown的CSS样式-->
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.css}">
+
+    <!--script（jquery.min.js文件必须放在最上面，否则会报错）-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"><\/script>')
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script th:src="@{/lib/prism/prism.js}"></script>
+    <script th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+    <!--js动态特效-->
+    <script th:src="@{/js/emoji.js}"></script>
+    <script th:src="@{/js/activate-power-mode.js}"></script>
+    <script>
+        POWERMODE.colorful = true; // 控制开启/开启礼花特效
+        POWERMODE.shake = false; // 控制开启/关闭屏幕震动特效
+        document.body.addEventListener('input', POWERMODE);
+    </script>
+
+    <!--ajax验证提示效果-->
+    <script>
+        function u() {
+            $.ajax({
+                url:"/admin/userPass",
+                type:"POST",
+                data:{"username":$("#user").val()},
+                success:function (data) {
+                    if ("用户名正确" == data.toString()) {
+                        $("#userInfo").css("color","teal");
+                        console.log(data);
+                    } else {
+                        $("#userInfo").css("color","red");
+                        console.log(data);
+                    }
+                    $("#userInfo").html(data);
+                }
+            })
+        }
+
+        function p() {
+            $.ajax({
+                url:"/admin/userPass",
+                type:"POST",
+                data:{"password":$("#pass").val()},
+                success:function (data) {
+                    if ("密码正确" == data.toString()) {
+                        $("#passInfo").css("color","teal");
+                    } else {
+                        $("#passInfo").css("color","red");
+                    }
+                    $("#passInfo").html(data);
+                }
+            })
+        }
+    </script>
+
+</head>
+<body>
+<!--导航-->
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">管理后台</h2>
+            <a th:href="@{/admin/blogs}" class=" m-item item m-mobile-hide" th:classappend="${n==1} ? 'active teal'"><i
+                    class="mini home icon"></i><span th:text="#{nav.blog}">博客</span></a>
+            <a th:href="@{/admin/types}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active teal'"><i
+                    class="mini idea icon"></i><span th:text="#{nav.type}">分类</span></a>
+            <a th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active teal'"><i
+                    class="mini tags icon"></i><span th:text="#{nav.tag}">标签</span></a>
+            <a th:href="@{/admin/comments}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active teal'"><i
+                    class="mini comments icon"></i><span th:text="#{nav.comment}">评论</span></a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img class="ui avatar image" th:src="@{/images/login_1.jpg}">
+                        <span style="color: teal;" th:text="${session.loginUser.nickname}"></span>
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a th:href="@{/admin/logout}" class="item">安全退出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--底部footer-->
+<footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img th:src="@{/images/wechat.png}" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced ">New Blog</h4>
+                <div id="newblogs-container">
+                    <div class="ui inverted link list" th:fragment="newBlogList">
+                        <a th:href="@{/blog/{id}(id=${blog.id})}" th:target="_blank" class="item m-text-thin"
+                           th:each="blog : ${newBlogs}"
+                           th:text="${blog.title}">用户故事（User Story）</a>
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced ">Call Me</h4>
+                <div class="ui inverted link list">
+                    <a th:href="@{/images/QQ.jpg}" class="item m-text-thin" th:text="#{footer.email}">email</a>
+                    <a th:href="@{/images/QQ.jpg}" class="item m-text-thin" th:text="#{footer.qq}">QQ</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced ">My Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{footer.myText}">博客简介</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2019 - 2020 Freedom Designed by Horse</p>
+    </div>
+</footer>
+
+<!--script-->
+<th:block th:fragment="script">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script th:src="@{/lib/prism/prism.js}"></script>
+    <script th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+
+    <!--自动刷新footer中的最新推荐-->
+    <script>
+        $('#newblogs-container').load(/*[[@{/footer/newblogs}]]*/"/footer/newblogs");
+    </script>
+
+</th:block>
+
+</body>
+</html>

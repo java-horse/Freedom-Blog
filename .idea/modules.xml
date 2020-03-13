@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../springboot-auto-jpa/springboot-auto-jpa.iml" filepath="$PROJECT_DIR$/../springboot-auto-jpa/springboot-auto-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-auto-mybatis/springboot-auto-mybatis.iml" filepath="$PROJECT_DIR$/../springboot-auto-mybatis/springboot-auto-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-web-authority/springboot-web-authority.iml" filepath="$PROJECT_DIR$/../springboot-web-authority/springboot-web-authority.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-web-bolg.iml" filepath="$PROJECT_DIR$/springboot-web-bolg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-web-kaptcha/springboot-web-kaptcha.iml" filepath="$PROJECT_DIR$/../springboot-web-kaptcha/springboot-web-kaptcha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-we-markdown/springboot-web-markdown.iml" filepath="$PROJECT_DIR$/../springboot-we-markdown/springboot-web-markdown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-web-upload/springboot-web-upload.iml" filepath="$PROJECT_DIR$/../springboot-web-upload/springboot-web-upload.iml" />
+    </modules>
+  </component>
+</project>
