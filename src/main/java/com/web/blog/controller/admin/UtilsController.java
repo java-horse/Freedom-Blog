@@ -1,8 +1,6 @@
 package com.web.blog.controller.admin;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class UtilsController {
 
-    @Value("${swaggerURL}")
-    private String swaggerURL;
-
+    /**
+     * 跳转swagger-ui API页面
+     * @return
+     */
     @GetMapping(value = "/swagger")
-    public String toSeaggerUI (Model model) {
-        System.out.println(swaggerURL);
-        model.addAttribute("swaggerURL",swaggerURL);
-        return "admin/swagger";
+    public String toSeaggerUI () {
+        return "redirect:/swagger-ui.html";
     }
 
 }
