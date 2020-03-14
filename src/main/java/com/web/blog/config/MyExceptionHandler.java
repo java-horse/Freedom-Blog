@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author mabin
  * @date 2020/2/14 20:43
- * 异常处理工具类MyExceptionHandler
+ * 500异常处理工具类MyExceptionHandler
  */
 @ControllerAdvice  //增强型控制器
 public class MyExceptionHandler {
@@ -34,7 +34,7 @@ public class MyExceptionHandler {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("url", request.getRequestURL());
         modelAndView.addObject("exception", e);
-        modelAndView.setViewName("error/error");  //发生异常的跳转路径
+        modelAndView.setViewName("error/500");  //发生异常的跳转路径
         return modelAndView;
 
     }

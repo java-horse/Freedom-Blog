@@ -32,7 +32,7 @@
     <script th:src="@{/js/activate-power-mode.js}"></script>
     <script>
         POWERMODE.colorful = true; // 控制开启/关闭礼花特效
-        POWERMODE.shake = false;  //控制开启/关闭屏幕震动（开关好像失效了）
+        POWERMODE.shake = true;  //控制开启/关闭屏幕震动（开关好像失效了）
         document.body.addEventListener('input', POWERMODE);
     </script>
 
@@ -88,6 +88,8 @@
                     class="mini tags icon"></i><span th:text="#{nav.tag}">标签</span></a>
             <a th:href="@{/admin/comments}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active teal'"><i
                     class="mini comments icon"></i><span th:text="#{nav.comment}">评论</span></a>
+            <a th:href="@{/admin/swagger}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active teal'"><i
+                    class="mini comments icon"></i><span>Swagger UI</span></a>
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown item">
                     <div class="text">
@@ -97,6 +99,7 @@
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         <a th:href="@{/admin/logout}" class="item">安全退出</a>
+                        <a th:href="@{/about}" class="item">关于博主</a>
                     </div>
                 </div>
             </div>

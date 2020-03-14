@@ -149,7 +149,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }, 75);
 	        }
 	    }
-	};
+	}
 	POWERMODE.colorful = false;
 
 	function loop() {
