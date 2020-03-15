@@ -43,8 +43,9 @@
                 <td th:text="${iterStat.count}"></td>
                 <td th:text="${type.name}"></td>
                 <td>
-                    <a th:href="@{/admin/types/{id}/update(id=${type.id})}" class="ui mini teal basic button">编辑</a>
-                    <a th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red basic button">删除</a>
+                    <a th:href="@{/admin/types/{id}(id=${type.id})}" class="ui mini teal basic button">编辑</a>
+                    <button class="ui mini red basic button del-btn"
+                            th:attr="del-url=@{/admin/types/{id}(id=${type.id})}">删除</button>
                 </td>
             </tr>
             </tbody>
@@ -70,6 +71,10 @@
             </tr>
             </tfoot>
         </table>
+        <!--提交删除的form表单-->
+        <form id="del-form" th:method="post">
+            <input type="hidden" name="_method" th:value="delete"/>
+        </form>
     </div>
 </div>
 <br>
@@ -101,6 +106,13 @@
                 .closest('.message')
                 .transition('fade');
         });
+</script>
+<script>
+    //js提交form表单
+    $(".del-btn").click(function () {
+        $("#del-form").attr("action",$(".del-btn").attr("del-url")).submit();
+        return false;
+    })
 </script>
 </body>
 </html>

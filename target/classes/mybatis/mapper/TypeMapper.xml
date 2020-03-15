@@ -7,7 +7,7 @@
     <select id="getBlogIndexShow" resultType="com.web.blog.dto.BlogIndexShow">
         SELECT b.id,b.title,b.description,b.views,b.first_picture,b.update_time,u.avatar,u.nickname,t.name
         FROM t_blog b ,t_user u ,t_type t
-        WHERE b.type_id=#{id} AND b.user_id=u.id AND b.type_id=t.id;
+        WHERE b.type_id=#{id} AND b.user_id=u.id AND b.type_id=t.id
     </select>
 
 

@@ -77,7 +77,7 @@ public class TypeController {
 
     /*-------------------更新-----------------*/
 
-    @GetMapping(value = "/types/{id}/update")
+    @GetMapping(value = "/types/{id}")
     public String editTypePage(@PathVariable(value = "id") Long id, Model model) {
         model.addAttribute("type", typeService.getTypeById(id));
         return "admin/types-update";
@@ -89,11 +89,11 @@ public class TypeController {
      * @param redirectAttributes
      * @return
      */
-    @PostMapping(value = "/types/update")
+    @PutMapping(value = "/types")
     public String editTypesName(Type type, RedirectAttributes redirectAttributes) {
-        /*判断修改的名称是否已存在*/
-        Type typeById = typeService.getTypeByName(type.getName());
-        if (typeById == null) {
+        /*判断修改后的名称是否已存在（MySQL默认不区分大小写）*/
+        Type typeByName = typeService.getTypeByName(type.getName());
+        if (typeByName == null) {
             int updateType = typeService.updateType(type);
             if (updateType > 0) {
                 redirectAttributes.addFlashAttribute("message", "更新成功");
@@ -109,7 +109,7 @@ public class TypeController {
 
     /*-------------------删除-----------------*/
 
-    @GetMapping(value = "/types/{id}/delete")
+    @DeleteMapping(value = "/types/{id}")
     public String deleteTypePage(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         typeService.deleteType(id);
         redirectAttributes.addFlashAttribute("message", "删除成功");

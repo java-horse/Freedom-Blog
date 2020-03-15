@@ -48,7 +48,7 @@ public class IndexController {
     @GetMapping(value = "/")
     public String toIndex(@RequestParam(defaultValue = "1", value = "pageNum") Integer pageNum, Model model) {
         String orderBy = "update_time desc";
-        PageHelper.startPage(pageNum, 6, orderBy);
+        PageHelper.startPage(pageNum, 5, orderBy);
         List<BlogIndexShow> blogIndexShow = blogService.getBlogIndexShow();
         PageInfo<BlogIndexShow> pageInfo = new PageInfo<>(blogIndexShow);
         model.addAttribute("pageInfo", pageInfo);
@@ -71,20 +71,20 @@ public class IndexController {
         if (query == null || "".equals(query)) {
             return "redirect:/;";
         }
-        PageHelper.startPage(pageNum,6);
+        PageHelper.startPage(pageNum, 6);
         List<BlogIndexShow> blogIndexSearch = blogService.getBlogIndexSearch(query);
         PageInfo<BlogIndexShow> pageInfo = new PageInfo<>(blogIndexSearch);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageInfo", pageInfo);
         return "search";
     }
 
     /*-----------------blog详情页---------------------------*/
 
     @GetMapping(value = "/blog/{id}")
-    public String blogDetail(@PathVariable(value = "id") Long id,Model model) {
+    public String blogDetail(@PathVariable(value = "id") Long id, Model model) {
         BlogDetail blogDetail = blogService.getBlogDetail(id);
-        model.addAttribute("blog",blogDetail);
-        model.addAttribute("comments",commentService.listCommentByBlogId(id));
+        model.addAttribute("blog", blogDetail);
+        model.addAttribute("comments", commentService.listCommentByBlogId(id));
         return "blog";
     }
 
@@ -100,7 +100,7 @@ public class IndexController {
                 break;
             }
         }
-        model.addAttribute("newBlogs",recommends);
+        model.addAttribute("newBlogs", recommends);
         return "fragment :: newBlogList";
     }
 

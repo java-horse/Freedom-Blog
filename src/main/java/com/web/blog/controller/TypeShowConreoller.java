@@ -31,7 +31,7 @@ public class TypeShowConreoller {
 
     @GetMapping(value = "/types/{id}")
     public String types(@PathVariable(value = "id") Long id, Model model,
-                        @RequestParam(defaultValue = "1",value = "pageNum") Integer pageNum) {
+                        @RequestParam(defaultValue = "1", value = "pageNum") Integer pageNum) {
         String orderBy = "update_time desc";
         ArrayList<Type> types = new ArrayList<>();
         List<Type> arrayList = typeService.getAdminType();
@@ -44,11 +44,12 @@ public class TypeShowConreoller {
             type.setBlogs(blogService.listBlogByTypeId(type.getId()));
             types.add(type);
         }
-        PageHelper.startPage(pageNum,6,orderBy);
-        PageInfo<BlogIndexShow> pageInfo = new PageInfo<>(typeService.getBlogIndexShow(id));
-        model.addAttribute("types",types);
-        model.addAttribute("blogs",pageInfo);
-        model.addAttribute("activeTypeId",id);
+        PageHelper.startPage(pageNum, 6, orderBy);
+        List<BlogIndexShow> blogIndexShow = typeService.getBlogIndexShow(id);
+        PageInfo<BlogIndexShow> pageInfo = new PageInfo<>(blogIndexShow);
+        model.addAttribute("types", types);
+        model.addAttribute("blogs", pageInfo);
+        model.addAttribute("activeTypeId", id);
         return "types";
     }
 

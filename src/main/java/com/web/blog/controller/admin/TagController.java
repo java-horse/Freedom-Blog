@@ -3,7 +3,6 @@ package com.web.blog.controller.admin;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.web.blog.bean.Tag;
-import com.web.blog.bean.Type;
 import com.web.blog.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,13 +59,13 @@ public class TagController {
 
     /*------------------编辑-----------------------*/
 
-    @GetMapping(value = "/tags/{id}/update")
+    @GetMapping(value = "/tags/{id}")
     public String updateTagsPage(@PathVariable(value = "id") Long id, Model model) {
         model.addAttribute("tag", tagService.getTagsById(id));
         return "admin/tags-update";
     }
 
-    @PostMapping(value = "/tags/update")
+    @PutMapping(value = "/tags")
     public String updateTagsName(Tag tag, RedirectAttributes redirectAttributes) {
         Tag tagsByName = tagService.getTagsByName(tag.getName());
         if (tagsByName == null) {
@@ -86,7 +85,7 @@ public class TagController {
 
     /*-----------------删除------------------*/
 
-    @GetMapping(value = "/tags/{id}/delete")
+    @DeleteMapping(value = "/tags/{id}")
     public String deleteTagPage(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         tagService.deleteTags(id);
         redirectAttributes.addFlashAttribute("message", "删除成功");

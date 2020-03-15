@@ -76,9 +76,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!--footer-->
-                <div class="ui bottom attached segment">
+                <div class="ui bottom attached segment" th:if="${pageInfo.pages > 1}">
                     <div class="ui middle aligned two column grid">
                         <div class="column">
                             <!--th:unless="${pageInfo.isFirstPage}" :除非它不是第一页-->

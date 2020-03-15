@@ -8,7 +8,7 @@
         <bind name="param" value="'%' + tagId + '%'"/>
         SELECT b.id,b.title,b.description,b.views,b.first_picture,b.tag_ids,b.update_time,u.avatar,u.nickname,t.name
         FROM t_blog b ,t_user u ,t_type t
-        WHERE b.type_id=t.id AND b.user_id=u.id AND b.tag_ids LIKE #{param};
+        WHERE b.type_id=t.id AND b.user_id=u.id AND b.tag_ids LIKE #{param}
 
     </select>
 

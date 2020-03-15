@@ -24,9 +24,8 @@
 <!--中间内容-->
 <div class="m-container-small m-padded-tb-big">
     <div class="ui container">
-        <form th:action="@{/admin/types/update}"
-              th:method="post"
-              class="ui form">
+        <form th:action="@{/admin/types}" th:method="post" class="ui form">
+            <input type="hidden" name="_method" th:value="put"/>
             <input type="hidden" name="id" th:value="${type.id}">
             <div class="required field">
                 <div class="ui left labeled input">

@@ -11,7 +11,7 @@
     <select id="listBlog" resultType="blogQuery">
         <include refid="selectBlog"/>
         FROM t_blog b LEFT JOIN
-        t_type t ON b.type_id = t.id;
+        t_type t ON b.type_id = t.id
     </select>
 
     <select id="getBlogSearch" parameterType="com.web.blog.dto.BlogSearch" resultType="blogQuery">
@@ -44,7 +44,7 @@
     <select id="getBlogIndexShow" resultType="com.web.blog.dto.BlogIndexShow">
         <include refid="selectBlogIndexShow"/>
         FROM t_blog b ,t_user u ,t_type t
-        WHERE b.type_id=t.id AND b.user_id=u.id;
+        WHERE b.type_id=t.id AND b.user_id=u.id
     </select>
 
     <select id="getBlogIndexSearch" parameterType="string" resultType="com.web.blog.dto.BlogIndexShow">
@@ -74,11 +74,11 @@
     <select id="archivesBlogYear" resultType="string">
         SELECT DATE_FORMAT (b.update_time,'%Y') AS `year` FROM t_blog b
         GROUP BY `year`
-        ORDER BY `year` DESC ;
+        ORDER BY `year` DESC
         </select>
 
     <select id="archivesListBlog" parameterType="string" resultType="com.web.blog.dto.BlogShow">
-        select * from t_blog b where DATE_FORMAT(b.update_time,'%Y') = #{year};
+        select * from t_blog b where DATE_FORMAT(b.update_time,'%Y') = #{year}
     </select>
 
     <!--动态sql练习-->

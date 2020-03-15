@@ -42,8 +42,9 @@
                 <td th:text="${iterStat.count}"></td>
                 <td th:text="${tag.name}"></td>
                 <td>
-                    <a th:href="@{/admin/tags/{id}/update(id=${tag.id})}" class="ui mini teal basic button">编辑</a>
-                    <a th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
+                    <a th:href="@{/admin/tags/{id}(id=${tag.id})}" class="ui mini teal basic button">编辑</a>
+                    <button class="ui mini red basic button del-btn"
+                            th:attr="del-url=@{/admin/tags/{id}(id=${tag.id})}">删除</button>
                 </td>
             </tr>
             </tbody>
@@ -69,6 +70,9 @@
             </tr>
             </tfoot>
         </table>
+        <form th:method="post" class="del-form">
+            <input type="hidden" name="_method" th:value="delete"/>
+        </form>
     </div>
 </div>
 
@@ -100,6 +104,12 @@
                 .closest('.message')
                 .transition('fade');
         });
+    //提交删除表单
+    $(".del-btn").click(function () {
+        $(".del-form").attr("action",$(this).attr("del-url")).submit();
+        //取消默认属性
+        return false
+    })
 
 </script>
 </body>

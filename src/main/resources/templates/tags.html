@@ -38,7 +38,7 @@
         </div>
 
         <div class="ui top attached teal segment">
-            <div class="ui padded vertical segment m-padded-tb-large m-mobile-lr-clear" th:each="blog : ${blogs.list}">
+            <div class="ui padded vertical segment m-padded-tb-large m-mobile-lr-clear" th:each="blog : ${pageInfo.list}">
                 <div class="ui mobile reversed stackable grid">
                     <div class="eleven wide column">
                         <h3 class="ui header"><a th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black"
@@ -51,7 +51,7 @@
                                         <div class="item">
                                             <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.avatar}}" alt="头像"
                                                  class="ui avatar image">
-                                            <div class="content"><a href="#" class="header" th:text="${blog.nickname}">马滨</a></div>
+                                            <div class="content"><a href="#" class="header" th:text="${blog.nickname}">Horse</a></div>
                                         </div>
                                         <div class="item">
                                             <i class="calendar icon"></i> <span
@@ -77,29 +77,27 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="five wide column">
                         <br/>
                         <br/>
                         <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
-                            <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}" alt="博客首图"
-                                 class="ui rounded image"></a>
+                            <img th:src="@{${blog.firstPicture}}" alt="博客首图" class="ui rounded image"></a>
                     </div>
                 </div>
             </div>
         </div>
         <!--footer-->
-        <div class="ui bottom attached segment">
+        <div class="ui bottom attached segment" th:if="${pageInfo.pages > 1}">
             <div class="ui middle aligned two column grid">
                 <div class="column">
                     <!--th:unless="${pageInfo.isFirstPage}" :除非它不是第一页-->
-                    <div class="item"><a class="ui mini teal basic button" th:unless="${blogs.isFirstPage}"
+                    <div class="item"><a class="ui mini teal basic button" th:unless="${pageInfo.isFirstPage}"
                                          th:href="@{/tags(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:${pageInfo.pageNum})}">
                         上一页</a>
                     </div>
                 </div>
                 <div class="right aligned column">
-                    <div class="item"><a class="ui mini teal basic button" th:unless="${blogs.isLastPage}"
+                    <div class="item"><a class="ui mini teal basic button" th:unless="${pageInfo.isLastPage}"
                                          th:href="@{/tags(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pageNum}+1)}">
                         下一页</a>
                     </div>
