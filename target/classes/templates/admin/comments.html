@@ -45,7 +45,8 @@
                     th:class="${comment.nickname == '月夜の麋鹿'} ? 'ui basic teal left pointing label m-padded-mini' : 'ui basic red left pointing label m-padded-mini'"></td>
                 <td th:text="${comment.content}"></td>
                 <td>
-                    <a th:href="@{/admin/comments/{id}/delete(id=${comment.id})}" class="ui mini red basic button">删除</a>
+                    <button type="button" class="ui mini red basic button del-btn"
+                            th:attr="del-url=@{/admin/comments/{id}(id=${comment.id})}">删除</button>
                 </td>
             </tr>
             </tbody>
@@ -73,6 +74,9 @@
             </tr>
             </tfoot>
         </table>
+        <form class="del-form" method="post">
+            <input type="hidden" name="_method" value="delete"/>
+        </form>
     </div>
 </div>
 <br>
@@ -109,6 +113,10 @@
                 .closest('.message')
                 .transition('fade');
         });
+
+    $(".del-btn").click(function () {
+        $(".del-form").attr("action",$(".del-btn").attr("del-url")).submit();
+    })
 </script>
 </body>
 </html>

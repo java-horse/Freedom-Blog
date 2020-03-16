@@ -19,6 +19,7 @@ import org.apache.shiro.util.ByteSource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.*;
 
@@ -42,6 +43,9 @@ class SpringbootWebBolgApplicationTests {
 
     @Autowired
     private LoginService loginService;
+
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
 
     @Test
@@ -178,6 +182,14 @@ class SpringbootWebBolgApplicationTests {
     public void test12() {
         if (loginService.findUserByUsername("mabin").getPassword().equals(MD5ShiroUtils.MD5Code("mabin", "mabin123"))) {
             System.out.println("密码匹配成功");
+        }
+    }
+
+    @Test
+    public void test13() {
+        List<Object> blogindexshow = redisTemplate.opsForList().range("blogindexshow", 0, -1);
+        for (Object o : blogindexshow) {
+            System.out.println(o);
         }
     }
 

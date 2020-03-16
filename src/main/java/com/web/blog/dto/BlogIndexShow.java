@@ -9,6 +9,8 @@ import java.util.Date;
  */
 public class BlogIndexShow implements Serializable {
 
+    private static final long serialVersionUID = 7106247541350014586L;
+
     private Long id;
     private String title;
     private String firstPicture;

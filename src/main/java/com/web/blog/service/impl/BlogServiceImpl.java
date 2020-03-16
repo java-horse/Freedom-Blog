@@ -47,7 +47,7 @@ public class BlogServiceImpl implements BlogService {
         /*发布博客设置随机浏览数据*/
         blog.setViews(new Random().nextInt(991) + 10);
         System.out.println(blog.isReleaseComment());
-        /*向t_blog_tags表中保存相应的信息(不知道为什么，数据库中没有添加信息，但不影响功能运行)*/
+        /*向t_blog_tags表中保存相应的信息(不知道为什么，数据库中没有添加信息)*/
         List<Tag> tags = blog.getTags();
         System.out.println(tags);
         BlogAndTag blogAndTag;
@@ -88,7 +88,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<BlogIndexShow> getBlogIndexShow() {
         return blogMapper.getBlogIndexShow();
-    }
+}
 
     /**
      * 判断recommend是否为true,决定是否推荐到index页面
@@ -148,10 +148,10 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public Map<String, List<BlogShow>> archivesBlogs() {
-       Map<String,List<BlogShow>> archivesBlogMap = new LinkedHashMap<>();
+        Map<String, List<BlogShow>> archivesBlogMap = new LinkedHashMap<>();
         List<String> blogYear = blogMapper.archivesBlogYear();
         for (String year : blogYear) {
-            archivesBlogMap.put(year,blogMapper.archivesListBlog(year));
+            archivesBlogMap.put(year, blogMapper.archivesListBlog(year));
         }
         return archivesBlogMap;
     }

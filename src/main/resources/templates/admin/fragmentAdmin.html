@@ -40,15 +40,15 @@
     <script>
         function u() {
             $.ajax({
-                url:"/admin/userPass",
-                type:"POST",
-                data:{"username":$("#user").val(), "password":$("#pass").val()},
-                success:function (data) {
+                url: "/admin/userPass",
+                type: "POST",
+                data: {"username": $("#user").val(), "password": $("#pass").val()},
+                success: function (data) {
                     if ("用户名正确" == data.toString()) {
-                        $("#userInfo").css("color","teal");
+                        $("#userInfo").css("color", "teal");
                         console.log(data);
                     } else {
-                        $("#userInfo").css("color","red");
+                        $("#userInfo").css("color", "red");
                         console.log(data);
                     }
                     $("#userInfo").html(data);
@@ -58,14 +58,14 @@
 
         function p() {
             $.ajax({
-                url:"/admin/userPass",
-                type:"POST",
-                data:{"username":$("#user").val(), "password":$("#pass").val()},
-                success:function (data) {
+                url: "/admin/userPass",
+                type: "POST",
+                data: {"username": $("#user").val(), "password": $("#pass").val()},
+                success: function (data) {
                     if ("密码正确" == data.toString()) {
-                        $("#passInfo").css("color","teal");
+                        $("#passInfo").css("color", "teal");
                     } else {
-                        $("#passInfo").css("color","red");
+                        $("#passInfo").css("color", "red");
                     }
                     $("#passInfo").html(data);
                 }
@@ -99,6 +99,7 @@
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         <a th:href="@{/admin/logout}" class="item">安全退出</a>
+                        <a th:href="@{/admin/editAdmin}" class="item">编辑资料</a>
                         <a th:href="@{/about}" class="item">关于博主</a>
                     </div>
                 </div>
