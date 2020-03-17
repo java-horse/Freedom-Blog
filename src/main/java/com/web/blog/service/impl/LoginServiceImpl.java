@@ -23,4 +23,14 @@ public class LoginServiceImpl implements LoginService {
        return loginMapper.findUserByUsername(username);
     }
 
+    @Override
+    public User findUser() {
+        return loginMapper.findUser();
+    }
+
+    @Override
+    public int updateAdmin(User user) {
+        return loginMapper.updateAdmin(user);
+    }
+
 }

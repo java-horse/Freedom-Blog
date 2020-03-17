@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragmentAdmin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑资料</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<div th:replace="admin/fragmentAdmin :: menu(0)"></div>
+<br/><br/>
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${message}"></p>
+        </div>
+    </div>
+</div>
+<!--修改基本资料-->
+<form action="/admin/editAdmin" method="post">
+    <input type="hidden" name="_method" value="put"/>
+    <input type="hidden" name="id" th:value="${User.id}">
+    <div class="ui labeled input">
+        <label class="ui compact teal basic label ">昵&nbsp;&nbsp;&nbsp;&nbsp;称</label>
+        <input type="text" name="nickname" th:value="${User.nickname}"/>
+    </div>
+    <br/><br/>
+    <div align="center" class="ui labeled input">
+        <label class="ui compact teal basic label ">用户名</label>
+        <input type="text" name="username" th:value="${User.username}"/>
+    </div>
+    <br/><br/>
+    <div align="center" class="ui labeled input">
+        <label class="ui compact teal basic label ">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+        <input type="password" name="password" th:value="${User.password}"/>
+    </div>
+    <br/><br/>
+    <div align="center" class="ui labeled input">
+        <label class="ui compact teal basic label ">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+        <input type="text" name="email" th:value="${User.email}"/>
+    </div>
+    <br/><br/>
+    <input type="submit" class="ui teal button" th:value="修改">
+</form>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+
+<br>
+<br>
+<!--底部footer-->
+<div th:replace="admin/fragmentAdmin :: footer"></div>
+
+<!--script-->
+<th:block th:replace="fragment :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
+
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+</body>
+</html>
+

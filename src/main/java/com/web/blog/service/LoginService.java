@@ -15,5 +15,8 @@ public interface LoginService {
      */
     public User findUserByUsername(String username);
 
+    public User findUser();
 
+
+    int updateAdmin(User user);
 }

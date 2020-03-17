@@ -8,16 +8,31 @@
 <body>
 <!--导航-->
 <div th:replace="fragment :: menu(0)"></div>
-
-
-<div>
-    <a th:href="@{/}" th:alt="点击返回首页">
-        <img th:src="@{images/500.jpg}" th:width="1900px" th:height="620px">
-    </a>
+<br/>
+<br/>
+<br/>
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-huge">
+        <div class="ui contianer">
+            <h2 th:text="${status}"></h2>
+            <p>对不起，服务器发生异常...</p>
+            <a th:href="@{/}" th:alt="点击返回首页" style="text-decoration: none">点击返回首页</a>
+        </div>
+    </div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <!--footer-->
-<th:block th:replace="fragment :: footer"/>
+<div th:replace="fragment :: footer"></div>
+
+<!--script-->
+<th:block th:replace="fragment :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
 
 
 </body>

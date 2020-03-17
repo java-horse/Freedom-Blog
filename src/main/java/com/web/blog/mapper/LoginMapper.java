@@ -1,9 +1,11 @@
 package com.web.blog.mapper;
 
 import com.web.blog.bean.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author mabin
@@ -21,5 +23,10 @@ public interface LoginMapper {
     @Select("SELECT * FROM t_user WHERE username=#{username}")
     public User findUserByUsername(String username);
 
+    @Select("SELECT * FROM t_user limit 0,1")
+    public User findUser();
 
+    @Insert("update t_user set nickname=#{nickname},username=#{username},password=#{password},email=#{email} where id=#{id}")
+    @Transactional
+    int updateAdmin(User user);
 }
