@@ -10,6 +10,7 @@
         <module name="springboot-web-markdown" />
         <module name="springboot-auto-mybatis" />
         <module name="springboot-web-bolg" />
+        <module name="springboot-web-community" />
         <module name="springboot-web-authority" />
         <module name="springboot-web-upload" />
         <module name="springboot-auto-jpa" />
@@ -22,6 +23,7 @@
       <module name="springboot-web-again" target="1.8" />
       <module name="springboot-web-authority" target="1.8" />
       <module name="springboot-web-bolg" target="1.8" />
+      <module name="springboot-web-community" target="1.8" />
       <module name="springboot-web-kaptcha" target="1.8" />
       <module name="springboot-web-markdown" target="1.8" />
       <module name="springboot-web-upload" target="1.8" />
@@ -35,6 +37,7 @@
       <module name="springboot-web-again" options="-parameters" />
       <module name="springboot-web-authority" options="-parameters" />
       <module name="springboot-web-bolg" options="-parameters" />
+      <module name="springboot-web-community" options="-parameters" />
       <module name="springboot-web-kaptcha" options="-parameters" />
       <module name="springboot-web-markdown" options="-parameters" />
       <module name="springboot-web-upload" options="-parameters" />

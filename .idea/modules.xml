@@ -6,8 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/../springboot-auto-mybatis/springboot-auto-mybatis.iml" filepath="$PROJECT_DIR$/../springboot-auto-mybatis/springboot-auto-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/../springboot-web-authority/springboot-web-authority.iml" filepath="$PROJECT_DIR$/../springboot-web-authority/springboot-web-authority.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-web-bolg.iml" filepath="$PROJECT_DIR$/springboot-web-bolg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-web-community/springboot-web-community.iml" filepath="$PROJECT_DIR$/../springboot-web-community/springboot-web-community.iml" />
       <module fileurl="file://$PROJECT_DIR$/../springboot-web-kaptcha/springboot-web-kaptcha.iml" filepath="$PROJECT_DIR$/../springboot-web-kaptcha/springboot-web-kaptcha.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../springboot-we-markdown/springboot-web-markdown.iml" filepath="$PROJECT_DIR$/../springboot-we-markdown/springboot-web-markdown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springboot-web-markdown/springboot-web-markdown.iml" filepath="$PROJECT_DIR$/../springboot-web-markdown/springboot-web-markdown.iml" />
       <module fileurl="file://$PROJECT_DIR$/../springboot-web-upload/springboot-web-upload.iml" filepath="$PROJECT_DIR$/../springboot-web-upload/springboot-web-upload.iml" />
     </modules>
   </component>

@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/../springboot-web-authority/pom.xml" />
         <option value="$PROJECT_DIR$/../springboot-web-kaptcha/pom.xml" />
         <option value="$PROJECT_DIR$/../springboot-web-upload/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/pom.xml" />
       </list>
     </option>
   </component>

@@ -3,10 +3,12 @@
   <component name="Encoding" native2AsciiForPropertiesFiles="true">
     <file url="file://$PROJECT_DIR$/../springboot-auto-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../springboot-auto-mybatis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../springboot-we-markdown" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../springboot-web-authority" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../springboot-web-community" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../springboot-web-kaptcha" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../springboot-web-markdown" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../springboot-web-upload" charset="UTF-8" />
   </component>
 </project>
