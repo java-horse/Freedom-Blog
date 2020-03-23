@@ -1,15 +1,15 @@
 package com.web.blog.service.impl;
 
+import com.web.blog.bean.Blog;
 import com.web.blog.bean.Tag;
 import com.web.blog.dto.BlogDetail;
-import com.web.blog.dto.BlogIndexShow;
 import com.web.blog.mapper.BlogMapper;
 import com.web.blog.mapper.TagMapper;
-import com.web.blog.service.BlogService;
 import com.web.blog.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,13 +70,17 @@ public class TagServiceImpl implements TagService {
         return tagMapper.updateTags(tag);
     }
 
-    @Transactional
     @Override
-    public void deleteTags(Long id) {
-        tagMapper.deleteTags(id);
+    @Transactional
+    public void deleteTagsById(Long id, RedirectAttributes redirectAttributes) {
+       List<Blog> blogList = blogMapper.findBlogsByTagId(id);
+       if (blogList.size() > 0) {
+           redirectAttributes.addFlashAttribute("errorMessage","此标签有关联的博客，不允许删除！");
+       } else {
+           tagMapper.deleteTags(id);
+           redirectAttributes.addFlashAttribute("message","删除成功");
+       }
     }
-
-
 
     @Transactional
     @Override

@@ -1,5 +1,6 @@
 package com.web.blog.service.impl;
 
+import com.web.blog.bean.Blog;
 import com.web.blog.bean.Type;
 import com.web.blog.dto.BlogIndexShow;
 import com.web.blog.mapper.BlogMapper;
@@ -8,6 +9,7 @@ import com.web.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,15 +71,21 @@ public class TypeServiceImpl implements TypeService {
         return typeMapper.updateType(type);
     }
 
-    @Transactional
-    @Override
-    public void deleteType(Long id) {
-        typeMapper.deleteType(id);
-    }
-
     @Override
     public List<BlogIndexShow> getBlogIndexShow(Long id) {
         return typeMapper.getBlogIndexShow(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteTypeById(Long id, RedirectAttributes redirectAttributes) {
+        List<Blog> blogList = blogMapper.getBlogByTipeId(id);
+        if (blogList.size() > 0) {
+            redirectAttributes.addFlashAttribute("errorMessage", "此类型有关联博客，不允许删除！");
+        } else {
+            typeMapper.deleteType(id);
+            redirectAttributes.addFlashAttribute("message","删除成功！");
+        }
     }
 
 }

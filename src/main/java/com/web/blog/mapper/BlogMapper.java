@@ -19,7 +19,7 @@ public interface BlogMapper {
     public List<BlogQuery> listBlog();
 
     @Select("SELECT * FROM t_blog WHERE id=#{id}")
-    public Blog getBlogById(Long id);
+    public Blog getBlogById(@Param("id") Long id);
 
     @Insert(" INSERT INTO t_blog (title, content, first_picture, flag,\n" +
             " views, appreciation, share_statement, releaseComment,published,\n" +
@@ -39,7 +39,7 @@ public interface BlogMapper {
     public int updateBlog(BlogShow blogShow);
 
     @Delete("DELETE FROM t_blog WHERE id=#{id}")
-    public void deleteBlogById(Long id);
+    public void deleteBlogById(@Param("id") Long id);
 
 
     public List<BlogQuery> getBlogSearch(BlogSearch blogSearch);
@@ -76,7 +76,7 @@ public interface BlogMapper {
      * @return
      */
     @Select("select b.* from t_blog b where b.tag_ids like concat('%',#{tagId},'%')")
-    public List<Blog> listBlogByTagId(Long tagId);
+    public List<Blog> listBlogByTagId(@Param("tagId") Long tagId);
 
 
     /**
@@ -84,7 +84,7 @@ public interface BlogMapper {
      * @param query
      * @return
      */
-    public List<BlogIndexShow> getBlogIndexSearch(String query);
+    public List<BlogIndexShow> getBlogIndexSearch(@Param("query") String query);
 
 
     /**
@@ -92,7 +92,7 @@ public interface BlogMapper {
      * @param id
      * @return
      */
-    public BlogDetail getBlogDetail(Long id);
+    public BlogDetail getBlogDetail(@Param("id") Long id);
 
     /**
      * 增加views
@@ -100,13 +100,13 @@ public interface BlogMapper {
      * @return
      */
     @Update("update t_blog b set b.views=b.views+1 where id=#{id}")
-    public int getBlogViews(Long id);
+    public int getBlogViews(@Param("id") Long id);
 
     /*--------------------归档------------------------*/
 
     public List<String> archivesBlogYear();
 
-    public List<BlogShow> archivesListBlog(String year);
+    public List<BlogShow> archivesListBlog(@Param("year") String year);
 
     @Select("select count(*) from t_blog")
     public int blogCount();
@@ -116,4 +116,7 @@ public interface BlogMapper {
 
     public List<Blog> findBlogsByChoose(Map<String,Object> map);
 
+    List<Blog> getBlogByTipeId(@Param("typeId") Long id);
+
+    List<Blog> findBlogsByTagId(@Param("tagId") Long id);
 }

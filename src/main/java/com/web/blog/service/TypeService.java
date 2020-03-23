@@ -2,6 +2,7 @@ package com.web.blog.service;
 
 import com.web.blog.bean.Type;
 import com.web.blog.dto.BlogIndexShow;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -23,10 +24,10 @@ public interface TypeService {
 
     public int updateType(Type type);
 
-    public void deleteType(Long id);
 
     /*----------types详情页-----------------*/
 
     public List<BlogIndexShow> getBlogIndexShow(Long id);
 
+    void deleteTypeById(Long id, RedirectAttributes redirectAttributes);
 }

@@ -113,4 +113,19 @@
         </where>
     </select>
 
+    <sql id="delBlog">
+        select b.id,b.title,b.type_id from t_blog b
+    </sql>
+
+    <select id="getBlogByTipeId" parameterType="long" resultType="Blog">
+        <include refid="delBlog"/>
+        where b.type_id=#{typeId}
+    </select>
+
+    <select id="findBlogsByTagId" parameterType="long" resultType="Blog">
+        <bind name="pattern" value="'%' + tagId + '%'"/>
+        <include refid="delBlog"/>
+        where b.tag_ids like #{pattern}
+    </select>
+
 </mapper>

@@ -31,7 +31,7 @@ public interface TypeMapper {
      * @return
      */
     @Select("SELECT * FROM t_type WHERE id=#{id}")
-    public Type getTypeById(Long id);
+    public Type getTypeById(@Param("id") Long id);
 
     /**
      * 根据name查询分类信息
@@ -39,7 +39,7 @@ public interface TypeMapper {
      * @return
      */
     @Select("SELECT * FROM t_type WHERE name=#{name}")
-    public Type getTypeByName(String name);
+    public Type getTypeByName(@Param("name") String name);
 
     /**
      * 查询后台所有分类信息
@@ -65,7 +65,7 @@ public interface TypeMapper {
      * @param id
      */
     @Delete("DELETE FROM t_type WHERE id=#{id}")
-    public void deleteType(Long id);
+    public void deleteType(@Param("id") Long id);
 
     /*--------------公开分类-------------------------*/
 
@@ -74,6 +74,6 @@ public interface TypeMapper {
      * @param id
      * @return
      */
-    public List<BlogIndexShow> getBlogIndexShow(Long id);
+    public List<BlogIndexShow> getBlogIndexShow(@Param("id") Long id);
 
 }

@@ -2,7 +2,7 @@ package com.web.blog.service;
 
 import com.web.blog.bean.Tag;
 import com.web.blog.dto.BlogDetail;
-import com.web.blog.dto.BlogIndexShow;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -24,10 +24,9 @@ public interface TagService {
 
     public int updateTags(Tag tag);
 
-    public  void deleteTags(Long id);
-
     public List<Tag> getTagsString(String tagIds);
 
     public List<BlogDetail> getBlogDetail(Long tagId);
 
+    void deleteTagsById(Long id, RedirectAttributes redirectAttributes);
 }

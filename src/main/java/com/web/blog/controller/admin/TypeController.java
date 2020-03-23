@@ -111,8 +111,7 @@ public class TypeController {
 
     @DeleteMapping(value = "/types/{id}")
     public String deleteTypePage(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
-        typeService.deleteType(id);
-        redirectAttributes.addFlashAttribute("message", "删除成功");
+        typeService.deleteTypeById(id,redirectAttributes);
         return "redirect:/admin/types";
     }
 
