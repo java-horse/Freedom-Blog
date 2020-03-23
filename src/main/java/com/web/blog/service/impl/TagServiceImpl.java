@@ -44,18 +44,18 @@ public class TagServiceImpl implements TagService {
     @Transactional
     @Override
     public List<Tag> listTags() {
-        ArrayList<Tag> tags = new ArrayList<>();
-        List<Tag> listTags = tagMapper.listTags();
-        for (Tag tag : listTags) {
-            tag.setBlogs(blogMapper.listBlogByTagId(tag.getId()));
-            tags.add(tag);
-        }
-        return listTags;
+        return tagMapper.listTags();
     }
 
     @Override
     public List<Tag> getAdminTags() {
-        return tagMapper.getAdminTags();
+        ArrayList<Tag> tags = new ArrayList<>();
+        List<Tag> listTags = tagMapper.getAdminTags();
+        for (Tag tag : listTags) {
+            tag.setBlogs(blogMapper.listBlogByTagId(tag.getId()));
+            tags.add(tag);
+        }
+        return tags;
     }
 
     @Transactional

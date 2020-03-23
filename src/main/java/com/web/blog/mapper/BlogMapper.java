@@ -25,8 +25,8 @@ public interface BlogMapper {
             " views, appreciation, share_statement, releaseComment,published,\n" +
             " recommend, create_time, update_time, type_id,tag_ids, user_id, description)\n" +
             " VALUES (#{title},#{content},#{firstPicture},#{flag},#{views},#{appreciation},\n" +
-            " #{shareStatement},#{releaseComment},#{published},#{recommend},#{createTime},\n" +
-            " #{createTime},#{typeId},#{tagIds},#{userId},#{description});")
+            " #{shareStatement},#{releaseComment},#{published},#{recommend},NOW(),\n" +
+            " NOW(),#{typeId},#{tagIds},#{userId},#{description});")
     public int saveBlog(Blog blog);
 
     @Insert("INSERT INTO t_blog_tags (tag_id,blog_id) VALUES (tag_id=#{tagId},blog_id=#{blogId})")

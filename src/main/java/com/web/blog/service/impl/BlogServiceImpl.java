@@ -42,14 +42,10 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public int saveBlog(Blog blog) {
-        blog.setCreateTime(new Date());
-        blog.setUpdateTime(new Date());
         /*发布博客设置随机浏览数据*/
         blog.setViews(new Random().nextInt(991) + 10);
-        System.out.println(blog.isReleaseComment());
         /*向t_blog_tags表中保存相应的信息(不知道为什么，数据库中没有添加信息)*/
         List<Tag> tags = blog.getTags();
-        System.out.println(tags);
         BlogAndTag blogAndTag;
         for (Tag tag : tags) {
             blogAndTag = new BlogAndTag(tag.getId(), blog.getId());

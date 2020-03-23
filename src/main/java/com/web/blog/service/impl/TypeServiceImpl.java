@@ -52,7 +52,7 @@ public class TypeServiceImpl implements TypeService {
         List<Type> adminType = typeMapper.getAdminType();
         ArrayList<Type> types = new ArrayList<>();
         for (Type type : adminType) {
-            /*根据type中的id连表查询并设置每种type中有多少条blog内容*/
+            /*根据type中的id连表查询并设置每种type中有多少条blog内容(首页只展示前6条分类)*/
             type.setBlogs(blogMapper.listBlogByTypeId(type.getId()));
             types.add(type);
         }
