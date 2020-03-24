@@ -22,32 +22,34 @@
         </div>
     </div>
 </div>
-<!--修改基本资料-->
-<form action="/admin/editAdmin" method="post">
-    <input type="hidden" name="_method" value="put"/>
-    <input type="hidden" name="id" th:value="${User.id}">
-    <div class="ui labeled input">
-        <label class="ui compact teal basic label ">昵&nbsp;&nbsp;&nbsp;&nbsp;称</label>
-        <input type="text" name="nickname" th:value="${User.nickname}"/>
-    </div>
-    <br/><br/>
-    <div align="center" class="ui labeled input">
-        <label class="ui compact teal basic label ">用户名</label>
-        <input type="text" name="username" th:value="${User.username}"/>
-    </div>
-    <br/><br/>
-    <div align="center" class="ui labeled input">
-        <label class="ui compact teal basic label ">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-        <input type="password" name="password" th:value="${User.password}"/>
-    </div>
-    <br/><br/>
-    <div align="center" class="ui labeled input">
-        <label class="ui compact teal basic label ">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-        <input type="text" name="email" th:value="${User.email}"/>
-    </div>
-    <br/><br/>
-    <input type="submit" class="ui teal button" th:value="修改">
-</form>
+<div align="center">
+    <!--修改基本资料-->
+    <form action="/admin/editAdmin" method="post">
+        <input type="hidden" name="_method" value="put"/>
+        <input type="hidden" name="id" th:value="${User.id}">
+        <div class="ui labeled input">
+            <label class="ui compact teal basic label ">昵&nbsp;&nbsp;&nbsp;&nbsp;称</label>
+            <input type="text" name="nickname" th:value="${User.nickname}"/>
+        </div>
+        <br/><br/>
+        <div align="center" class="ui labeled input">
+            <label class="ui compact teal basic label ">用户名</label>
+            <input type="text" name="username" th:value="${User.username}"/>
+        </div>
+        <br/><br/>
+        <div align="center" class="ui labeled input">
+            <label class="ui compact teal basic label ">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+            <input type="password" name="password" th:value="${User.password}"/>
+        </div>
+        <br/><br/>
+        <div align="center" class="ui labeled input">
+            <label class="ui compact teal basic label ">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+            <input type="text" name="email" th:value="${User.email}"/>
+        </div>
+        <br/><br/>
+        <input type="submit" class="ui teal button" th:value="提交修改">
+    </form>
+</div>
 <br/><br/>
 <br/><br/>
 <br/><br/>

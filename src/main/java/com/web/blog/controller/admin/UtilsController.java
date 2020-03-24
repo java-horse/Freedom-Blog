@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 /**
@@ -28,13 +29,19 @@ public class UtilsController {
     @Autowired
     private LoginService loginService;
 
+
     //进行配置文件获取参数值的时候，不能使用static修饰
     @Value("${imageURL}")
     private String imageURL;
+    @Value("${avatarImageURL}")
+    private String avatarImageURL;
 
     //使用硬盘路径替代path，防止重新部署Tomcat项目图片丢失，此处tomcat已经docbase指向了"D:/**"
     @Value("${imagePath}")
     private String path;
+
+    @Value("${avatarImagePath}")
+    private String avatarImagePath;
 
     /**
      * 跳转swagger-ui API页面
@@ -73,6 +80,13 @@ public class UtilsController {
         }
     }
 
+    /**
+     * markdown实现图片上传回显
+     *
+     * @param file
+     * @param request
+     * @return
+     */
     @RequestMapping("/imageUpload")
     @ResponseBody
     public JSONObject imageUpload(@RequestParam(value = "editormd-image-file", required = true) MultipartFile file,
@@ -104,4 +118,45 @@ public class UtilsController {
         //返回给前端json对象
         return res;
     }
+
+
+    /**
+     * 更新头像
+     * @param model
+     * @return
+     */
+    @GetMapping(value = "/avatar")
+    public String toEditAvatar(Model model) {
+        model.addAttribute("User", loginService.findUser());
+        return "admin/editAvatar";
+    }
+
+    @PostMapping(value = "/avatar")
+    public String editAvatar(@RequestParam("file") MultipartFile file, Integer id,
+                             RedirectAttributes redirectAttributes,HttpServletRequest request) {
+        //获取源文件名
+        String originalFilename = file.getOriginalFilename();
+        //获取文件后缀
+        String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
+        //重命名文件
+        String newFileName = UUID.randomUUID().toString().replaceAll("-","") + suffix;
+        //io传送
+        File targetFile = new File(avatarImagePath, newFileName);
+        if (!targetFile.exists()) {
+            targetFile.mkdirs();
+        }
+        try {
+            file.transferTo(targetFile);
+            //获取头像的URL
+            String avatarURL = FileUploadUtils.getImagePath(request) + avatarImageURL + newFileName;
+            //修改数据库头像的URL
+            loginService.updateUserAvatar(id,avatarURL);
+            redirectAttributes.addFlashAttribute("message","头像更新成功，再次登录更新...");
+            return "redirect:/admin/blogs";
+        } catch (IOException e) {
+            redirectAttributes.addFlashAttribute("message","头像更新失败，请联系管理员...");
+            return "redirect:/admin/blogs";
+        }
+    }
+
 }

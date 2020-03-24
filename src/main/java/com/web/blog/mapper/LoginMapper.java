@@ -1,9 +1,7 @@
 package com.web.blog.mapper;
 
 import com.web.blog.bean.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +15,7 @@ public interface LoginMapper {
 
     /**
      * 查询用户
+     *
      * @param username
      * @return
      */
@@ -29,4 +28,8 @@ public interface LoginMapper {
     @Insert("update t_user set nickname=#{nickname},username=#{username},password=#{password},email=#{email} where id=#{id}")
     @Transactional
     int updateAdmin(User user);
+
+    @Update("update t_user set avatar=#{avatarURL} where id=#{userId}")
+    @Transactional
+    void updateUserAvatar(@Param("userId") Integer id, @Param("avatarURL") String avatarURL);
 }

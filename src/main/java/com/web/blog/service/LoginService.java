@@ -19,4 +19,6 @@ public interface LoginService {
 
 
     int updateAdmin(User user);
+
+    void updateUserAvatar(Integer id,String avatarURL);
 }

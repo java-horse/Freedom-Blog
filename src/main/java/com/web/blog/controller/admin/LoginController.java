@@ -85,15 +85,15 @@ public class LoginController {
     @PostMapping(value = "/userPass")
     public String userPass(String username, String password) {
         String message = "";
-        if (!"".equals(username) & username != null) {
-            if (loginService.findUserByUsername(username) != null) {
-                if (loginService.findUserByUsername(username).getUsername().equals(username)) {
-                    message = "用户名正确";
+            if (!"".equals(username) & username != null) {
+                if (loginService.findUserByUsername(username) != null) {
+                    if (loginService.findUserByUsername(username).getUsername().equals(username)) {
+                        message = "用户名正确";
+                    }
+                } else {
+                    message = "用户名错误";
                 }
-            } else {
-                message = "用户名错误";
             }
-        }
         if (!"".equals(password) & password != null) {
             if (loginService.findUserByUsername(username) != null) {
                 if (loginService.findUserByUsername(username).getPassword().equals(MD5ShiroUtils.MD5Code(username,password))) {

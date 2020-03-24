@@ -49,7 +49,7 @@ public interface TypeMapper {
     public List<Type> listTypes();
 
 
-    @Select("select * from t_type limit 0, 8;")
+    @Select("select * from t_type ")
     public List<Type> getAdminType();
 
     /**

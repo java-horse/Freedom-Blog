@@ -46,10 +46,8 @@
                 success: function (data) {
                     if ("用户名正确" == data.toString()) {
                         $("#userInfo").css("color", "teal");
-                        console.log(data);
                     } else {
                         $("#userInfo").css("color", "red");
-                        console.log(data);
                     }
                     $("#userInfo").html(data);
                 }
@@ -63,11 +61,10 @@
                 data: {"username": $("#user").val(), "password": $("#pass").val()},
                 success: function (data) {
                     if ("密码正确" == data.toString()) {
-                        $("#passInfo").css("color", "teal");
+                        $("#passInfo").css("color", "teal").html(data);
                     } else {
-                        $("#passInfo").css("color", "red");
+                        $("#passInfo").css("color", "red").html('密码错误');
                     }
-                    $("#passInfo").html(data);
                 }
             })
         }
@@ -93,7 +90,7 @@
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown item">
                     <div class="text">
-                        <img class="ui avatar image" th:src="@{/images/login_1.jpg}">
+                        <a th:href="@{/admin/avatar}"><img class="ui avatar image" th:src="@{${session.loginUser.avatar}}"></a>
                         <span style="color: teal;" th:text="${session.loginUser.nickname}"></span>
                     </div>
                     <i class="dropdown icon"></i>

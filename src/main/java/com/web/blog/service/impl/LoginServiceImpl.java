@@ -33,4 +33,9 @@ public class LoginServiceImpl implements LoginService {
         return loginMapper.updateAdmin(user);
     }
 
+    @Override
+    public void updateUserAvatar(Integer id,String avatarURL) {
+        loginMapper.updateUserAvatar(id,avatarURL);
+    }
+
 }

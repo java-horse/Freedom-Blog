@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragmentAdmin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改头像</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+
+<!--导航-->
+<div th:replace="admin/fragmentAdmin :: menu(0)"></div>
+<br/><br/>
+<!--中间内容-->
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<div align="center">
+    <form th:action="@{/admin/avatar}" method="post" enctype="multipart/form-data">
+        <input type ="hidden" name="id" th:value="${User.id}"/>
+        <div class="ui left action input">
+            <button class="ui teal labeled icon button">
+                <i class="smile icon"></i>
+                <a class="ui image label" href="#">
+                    <img th:src="@{${session.loginUser.avatar}}">
+                    [[${User.nickname}]]
+                </a>
+            </button>
+            <div class="ui icon input loading">
+                <input type="file" name="file" placeholder="请选择上传文件..." style="border-color: teal;" >
+                <i class="search icon"></i>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="ui buttons">
+            <button class="ui button" type="reset">取消</button>
+            <div class="or"></div>
+            <button class="ui teal button" type="submit">保存</button>
+        </div>
+    </form>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+
+<br>
+<br>
+<!--底部footer-->
+<div th:replace="admin/fragmentAdmin :: footer"></div>
+
+<!--script-->
+<th:block th:replace="fragment :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</th:block>
+
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+</body>
+</html>
+

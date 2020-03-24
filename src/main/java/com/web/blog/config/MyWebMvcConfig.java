@@ -14,7 +14,8 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/images/editorImages/**")
-                .addResourceLocations("file:D:/IEDA_data/springboot-web-bolg/src/main/resources/static/images/editorImages/");
+        registry.addResourceHandler("/static/images/editorImages/**", "/static/images/avatarImages/**")
+                .addResourceLocations("file:D:/IEDA_data/springboot-web-bolg/src/main/resources/static/images/editorImages/",
+                        "file:D:/IEDA_data/springboot-web-bolg/src/main/resources/static/images/avatarImages/");
     }
 }
