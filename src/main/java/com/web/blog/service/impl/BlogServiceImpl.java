@@ -57,7 +57,6 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public int updateBlog(BlogShow blogShow) {
-        blogShow.setUpdateTime(new Date());
         return blogMapper.updateBlog(blogShow);
     }
 

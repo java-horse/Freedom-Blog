@@ -18,4 +18,5 @@ public interface CommentService {
     public List<Comment> listComments();
 
     public int deleteCommentById(Long id);
+
 }

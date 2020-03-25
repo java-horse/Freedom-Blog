@@ -39,6 +39,7 @@ public class BlogController {
 
     /**
      * 跳转blog页面并陈列显示
+     *
      * @param model
      * @param pageNum
      * @return
@@ -130,15 +131,16 @@ public class BlogController {
     /*---------------搜索-------------------*/
 
     @PostMapping(value = "/blogs/search")
-    public String searchBlog(@RequestParam(defaultValue = "1",value = "pageNum") Integer pageNum, Model model, BlogSearch blogSearch) {
+    public String searchBlog(@RequestParam(defaultValue = "1", value = "pageNum") Integer pageNum,
+                             Model model, BlogSearch blogSearch) {
         /*强制类型转换*/
         blogService.transFormRecomment(blogSearch);
         /*查询陈列*/
         List<BlogQuery> blogQueries = blogService.getBlogSearch(blogSearch);
         String orderBy = "id asc";
-        PageHelper.startPage(pageNum,5,orderBy);
+        PageHelper.startPage(pageNum, 5, orderBy);
         PageInfo<BlogQuery> pageInfo = new PageInfo<>(blogQueries);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("types", typeService.getAdminType());
         model.addAttribute("tags", tagService.listTags());
         return "admin/blogs";

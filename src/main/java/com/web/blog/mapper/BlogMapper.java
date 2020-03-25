@@ -34,7 +34,7 @@ public interface BlogMapper {
 
     @Update("UPDATE t_blog SET title=#{title},content=#{content},first_picture=#{firstPicture},flag=#{flag}," +
             "appreciation=#{appreciation},share_statement=#{shareStatement},releaseComment=#{releaseComment}," +
-            "published=#{published},recommend=#{recommend},update_time=#{updateTime}," +
+            "published=#{published},recommend=#{recommend},update_time=NOW()," +
             "type_id=#{typeId},tag_ids=#{tagIds},description=#{description} WHERE id=#{id}")
     public int updateBlog(BlogShow blogShow);
 

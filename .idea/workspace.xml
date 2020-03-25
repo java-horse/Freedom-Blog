@@ -8,33 +8,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8226b76b-7904-460b-ae60-11263f02966d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/editAvatar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/QuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/question.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springboot-web-authority/src/main/java/com/web/friday/config/MySecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-authority/src/main/java/com/web/friday/config/MySecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/blog-dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/blog-dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/blog-dev.log.2020-03-16.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/config/MyWebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/config/MyWebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/UtilsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/UtilsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/LoginMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/LoginMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/TypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/TypeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/BlogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/BlogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/me.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/editorImages/f8e71634791d407a9b3c7fe9fe7054b7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/avatarImages/930c96f494d14283b52bf4732d487512.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/editAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/editAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/fragmentAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/fragmentAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/editAvatar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/editAvatar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/web/blog/SpringbootWebBolgApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/web/blog/SpringbootWebBolgApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/config/MyWebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/config/MyWebMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/controller/admin/UtilsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/controller/admin/UtilsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/LoginMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/LoginMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/TypeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/TypeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/service/impl/LoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/service/impl/LoginServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/editorImages/f8e71634791d407a9b3c7fe9fe7054b7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/editAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/editAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/fragmentAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/fragmentAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/controller/admin/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/controller/admin/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/BlogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/BlogMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/mapper/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/blog/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/blog/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/blogs-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/blogs-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/web/blog/SpringbootWebBolgApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/web/blog/SpringbootWebBolgApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/dto/QuestionListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/dto/QuestionListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/QuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/QuestionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/QuestionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/QuestionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/profile.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,7 +110,7 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="blog: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="t_user: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="t_comment: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -111,43 +122,12 @@
     <favorites_list name="springboot-web-bolg" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/CommentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="87" column="56" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
-              <folding>
-                <element signature="e#2415#2416#0" expanded="true" />
-                <element signature="e#2458#2459#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/mapper/LoginMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/config/MyShiroRealm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/LoginService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="219">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
             </state>
           </provider>
         </entry>
@@ -155,26 +135,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/editAvatar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/me.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="175" column="17" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/UtilsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="123" column="11" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
+            <state relative-caret-position="1008">
+              <caret line="48" selection-start-line="48" selection-end-line="49" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -234,49 +199,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../springboot-web-markdown/src/main/resources/templates/markdown.html" />
-        <option value="$PROJECT_DIR$/../springboot-web-upload/src/main/resources/templates/image.html" />
-        <option value="$PROJECT_DIR$/../springboot-web-upload/src/main/java/com/web/upload/dao/FileMapper.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-upload/src/main/java/com/web/upload/service/FileService.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-upload/src/main/java/com/web/upload/service/impl/FileServiceImpl.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-upload/src/main/java/com/web/upload/controller/FileController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/utils/FileUploadUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-input.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/BlogServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/BlogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/TypeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/TagServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/../springboot-web-upload/src/main/java/com/web/upload/config/MyWebMvcConfig.java" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/UserMapper.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e12d69ea-51d5-4107-a94f-a08ee2caae68/console.sql" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/dto/QuestionListDTO.java" />
         <option value="$PROJECT_DIR$/../springboot-web-community/pom.xml" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/publish.html" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/interceptor/MyInterceptor.java" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/PublicController.java" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/utils/PageHelperUtils.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/ProfileController.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/QuestionService.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/impl/QuestionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/QuestionMapper.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/QuestionMapper.xml" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/static/css/community.css" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/fragment.html" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/profile.html" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/config/MyInterceptorConfig.java" />
-        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/TypeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/editAdmin.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/LoginService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/LoginServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-dev.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/web/blog/config/MyWebMvcConfig.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/LoginMapper.java" />
@@ -284,6 +222,33 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/fragmentAdmin.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/me.css" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/interceptor/MyInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/dto/QuestionListDTO.java" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/ProfileController.java" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/QuestionController.java" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/QuestionService.java" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/impl/QuestionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/QuestionMapper.java" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/QuestionMapper.xml" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/profile.html" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/question.html" />
+        <option value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/BlogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/BlogMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/mapper/CommentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/web/blog/SpringbootWebBolgApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/blog.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/editAvatar.html" />
       </list>
     </option>
@@ -323,10 +288,10 @@
   <component name="MavenRunner">
     <option name="vmOptions" value="-Dspring.output.ansi.enabled=ALWAYS" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="950" />
-    <option name="width" value="980" />
-    <option name="height" value="530" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -398,7 +363,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
@@ -439,7 +404,12 @@
               <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
@@ -447,16 +417,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
@@ -475,6 +435,46 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-web-bolg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-web-bolg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -487,7 +487,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
-    <property name="MyBatisLogPluginindexNum" value="1336" />
+    <property name="MyBatisLogPluginindexNum" value="1528" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -498,32 +498,32 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images/avatarImages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\static\images\avatarImages" />
-      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\templates\admin" />
-      <recent name="D:\IEDA_data\springboot-web-community\src\main\resources\static\images\avatorImage" />
-      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\java\com\web\blog\config" />
-      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\sql" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.web.friday.mapper" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\static\images" />
       <recent name="D:\IEDA_data\springboot-web-authority\src\main\resources\templates\permission" />
       <recent name="D:\IEDA_data\springboot-web-authority\src\main\resources\templates" />
       <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\templates\admin" />
       <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\static\admin\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.web.friday.mapper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IEDA_data\springboot-web-community\src\main\resources\templates" />
+      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\static\images\avatarImages" />
+      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\resources\templates\admin" />
+      <recent name="D:\IEDA_data\springboot-web-community\src\main\resources\static\images\avatorImage" />
+      <recent name="D:\IEDA_data\springboot-web-bolg\src\main\java\com\web\blog\config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -556,38 +556,6 @@
       <option name="PACKAGE_NAME" value="com.web.friday" />
       <option name="MAIN_CLASS_NAME" value="com.web.friday.SpringbootWebAuthorityApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpringbootWebBolgApplicationTests.test011" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot-web-bolg" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.web.blog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.web.blog" />
-      <option name="MAIN_CLASS_NAME" value="com.web.blog.SpringbootWebBolgApplicationTests" />
-      <option name="METHOD_NAME" value="test011" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpringbootWebBolgApplicationTests.test12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot-web-bolg" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.web.blog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.web.blog" />
-      <option name="MAIN_CLASS_NAME" value="com.web.blog.SpringbootWebBolgApplicationTests" />
-      <option name="METHOD_NAME" value="test12" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -683,8 +651,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.SpringbootWebBolgApplicationTests.test011" />
-      <item itemvalue="JUnit.SpringbootWebBolgApplicationTests.test12" />
       <item itemvalue="JUnit.SpringbootWebBolgApplicationTests.test13" />
       <item itemvalue="JUnit.SpringbootWebCommunityApplicationTests.contextLoads" />
       <item itemvalue="JUnit.SpringbootWebAuthorityApplicationTests.contextLoads" />
@@ -702,8 +668,6 @@
         <item itemvalue="JUnit.SpringbootWebAuthorityApplicationTests.contextLoads" />
         <item itemvalue="JUnit.SpringbootWebCommunityApplicationTests.contextLoads" />
         <item itemvalue="JUnit.SpringbootWebBolgApplicationTests.test13" />
-        <item itemvalue="JUnit.SpringbootWebBolgApplicationTests.test12" />
-        <item itemvalue="JUnit.SpringbootWebBolgApplicationTests.test011" />
       </list>
     </recent_temporary>
   </component>
@@ -711,7 +675,7 @@
     <option name="showAdditionalConfigNotification" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\马滨\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -887,44 +851,47 @@
       <workItem from="1584959483769" duration="12810000" />
       <workItem from="1585016044785" duration="13902000" />
       <workItem from="1585032689054" duration="5545000" />
-      <workItem from="1585038545536" duration="3300000" />
+      <workItem from="1585038545536" duration="3583000" />
+      <workItem from="1585051649636" duration="16000" />
+      <workItem from="1585058389564" duration="1344000" />
+      <workItem from="1585102954482" duration="16579000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 04m 18s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test14 - 2020.03.25 at 14h 57m 31s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test14" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 07m 46s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test14 - 2020.03.25 at 14h 58m 31s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test14" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 10m 56s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test14 - 2020.03.25 at 14h 59m 33s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test14" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 15m 49s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test14 - 2020.03.25 at 15h 02m 25s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test14" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 21m 15s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test14 - 2020.03.25 at 15h 07m 08s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test14" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 26m 57s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test14 - 2020.03.25 at 15h 24m 26s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test14" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 42m 20s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test15 - 2020.03.25 at 15h 32m 09s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test15" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebCommunityApplicationTests_contextLoads - 2020.03.17 at 21h 42m 55s.xml">
-      <configuration name="SpringbootWebCommunityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test15 - 2020.03.25 at 15h 41m 55s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test15" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebAuthorityApplicationTests_contextLoads - 2020.03.22 at 20h 44m 59s.xml">
-      <configuration name="SpringbootWebAuthorityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test15 - 2020.03.25 at 15h 43m 21s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test15" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringbootWebAuthorityApplicationTests_contextLoads - 2020.03.22 at 21h 14m 33s.xml">
-      <configuration name="SpringbootWebAuthorityApplicationTests.contextLoads" configurationId="JUnit" />
+    <history-entry file="SpringbootWebBolgApplicationTests_test15 - 2020.03.25 at 15h 51m 35s.xml">
+      <configuration name="SpringbootWebBolgApplicationTests.test15" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="726282000" />
+    <option name="totallyTimeSpent" value="744504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -937,14 +904,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5045045" side_tool="true" weight="0.17560321" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.493994" visible="true" weight="0.18498659" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.493994" visible="true" weight="0.13538875" />
       <window_info id="Structure" order="6" sideWeight="0.506006" side_tool="true" weight="0.1769437" />
       <window_info id="Web" order="7" sideWeight="0.5045045" side_tool="true" weight="0.19436997" />
       <window_info anchor="bottom" id="SQL Generator" order="0" show_stripe_button="false" weight="0.32882884" />
@@ -956,11 +922,11 @@
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32882884" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49933067" weight="0.32882884" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.4986613" weight="0.3108108" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.4986613" weight="0.487988" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="Run Dashboard" order="13" sideWeight="0.4953083" weight="0.3948949" />
+      <window_info anchor="bottom" id="Run Dashboard" order="13" sideWeight="0.4953083" weight="0.43093094" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.32882884" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.32882884" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.45945945" />
@@ -972,7 +938,7 @@
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Word Book" order="2" show_stripe_button="false" side_tool="true" weight="0.25871313" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Database" order="4" sideWeight="0.4984985" weight="0.1689008" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.4984985" weight="0.23525469" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32908848" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -987,7 +953,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5045045" side_tool="true" weight="0.17560321" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.493994" visible="true" weight="0.18498659" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.493994" visible="true" weight="0.1930295" />
       <window_info id="Structure" order="6" sideWeight="0.506006" side_tool="true" weight="0.1769437" />
       <window_info id="Web" order="7" sideWeight="0.5045045" side_tool="true" weight="0.19436997" />
       <window_info anchor="bottom" id="SQL Generator" order="0" show_stripe_button="false" weight="0.32882884" />
@@ -1003,7 +969,7 @@
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="Run Dashboard" order="13" sideWeight="0.4953083" weight="0.3948949" />
+      <window_info anchor="bottom" id="Run Dashboard" order="13" sideWeight="0.4953083" weight="0.34984985" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.32882884" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.32882884" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.45945945" />
@@ -1015,7 +981,7 @@
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Word Book" order="2" show_stripe_button="false" side_tool="true" weight="0.25871313" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Database" order="4" sideWeight="0.4984985" weight="0.1689008" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.4984985" weight="0.23525469" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32908848" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -1076,334 +1042,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/utils/PageHelperUtils.java" />
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/QuestionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e12d69ea-51d5-4107-a94f-a08ee2caae68/schema/community/table/question">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/QuestionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/impl/QuestionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="63" column="49" lean-forward="true" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
-          <folding>
-            <element signature="e#1777#1778#0" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/PublicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="39" column="32" selection-start-line="38" selection-start-column="27" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/QuestionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/static/css/community.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/fragment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2026#2032#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#th:block#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#1;n#th:block#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2700#2706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/interceptor/MyInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/config/MyInterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/utils/FileUploadUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <folding>
-            <element signature="e#2#11#0" expanded="true" />
-            <element signature="e#2#10#0" expanded="true" />
-            <element signature="e#2#9#0" expanded="true" />
-            <element signature="e#2#14#0" expanded="true" />
-            <element signature="e#2#11#0" expanded="true" />
-            <element signature="e#2#14#0" expanded="true" />
-            <element signature="e#2#11#0" expanded="true" />
-            <element signature="e#2#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/TypeShowConreoller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/mapper/TypeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/TypeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
-          <folding>
-            <element signature="e#1690#1691#0" expanded="true" />
-            <element signature="e#1738#1739#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/TypeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/TypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/blog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3906" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/blogs.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/editorImages/930c96f494d14283b52bf4732d487512.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/editAdmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/config/MyFileUploadConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.3.RELEASE/spring-webmvc-5.2.3.RELEASE-sources.jar!/org/springframework/web/servlet/config/annotation/ResourceHandlerRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="120" column="39" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/config/MyWebMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/schema/blog/table/t_blog">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/schema/blog/table/t_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/editorImages/f8e71634791d407a9b3c7fe9fe7054b7.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="36" column="61" lean-forward="true" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
-          <folding>
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#833#834#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/BlogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/avatarImages/a851b96d2b2642398c2ca38a34cb48a6.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/avatarImages/9c198f240c7a4bb6a8888e80e6bc8edd.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/mapper/LoginMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/config/MyShiroRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/fragmentAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
@@ -1417,17 +1055,6 @@
             <element signature="e#2#14#0" expanded="true" />
             <element signature="e#2#11#0" expanded="true" />
             <element signature="e#2#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="87" column="56" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
-          <folding>
-            <element signature="e#2415#2416#0" expanded="true" />
-            <element signature="e#2458#2459#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1448,15 +1075,377 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/me.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="175" column="17" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="17" />
+        <state relative-caret-position="459">
+          <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/config/MyShiroRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/mapper/LoginMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="87" column="56" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
+          <folding>
+            <element signature="e#2415#2416#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/interceptor/MyInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/config/MyInterceptorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/PublicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="33" column="81" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/dto/QuestionListDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/publish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/bean/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="96" selection-start-line="27" selection-start-column="96" selection-end-line="27" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/mybatis/mapper/QuestionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="58" column="32" lean-forward="true" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/fragment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="11" lean-forward="true" selection-end-line="86" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#th:block#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#th:block#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e12d69ea-51d5-4107-a94f-a08ee2caae68/schema/community/table/question">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/mapper/QuestionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/impl/QuestionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="68" column="42" lean-forward="true" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+          <folding>
+            <element signature="e#1777#1778#0" expanded="true" />
+            <element signature="e#1837#1838#0" expanded="true" />
+            <element signature="e#2085#2086#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/service/QuestionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/QuestionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/templates/question.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/java/com/web/community/controller/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/communityLog/community.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/logback-boot.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springboot-web-community/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/schema/blog/table/t_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/mapper/BlogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/BlogServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="e#1515#1516#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/blogs-input.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2016" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/bean/Blog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="130" column="26" lean-forward="true" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/BlogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="33" column="57" lean-forward="true" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/bean/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/schema/blog/table/t_blog">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0b21d5b9-ee6f-4d9d-8afb-5c1d08f876b0/schema/blog/table/t_comment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/service/impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="46" column="55" lean-forward="true" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+          <folding>
+            <element signature="e#1466#1467#0" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/web/blog/SpringbootWebBolgApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="185" column="26" lean-forward="true" selection-start-line="185" selection-start-column="26" selection-end-line="185" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="143" column="53" lean-forward="true" selection-start-line="143" selection-start-column="53" selection-end-line="143" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="135" column="18" lean-forward="true" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="59" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="23" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/mapper/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/web/blog/controller/admin/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/editAvatar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        <state relative-caret-position="1008">
+          <caret line="48" selection-start-line="48" selection-end-line="49" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -32,7 +32,7 @@
         DELETE FROM t_comment WHERE id=#{id}
     </delete>
 
-    <!--    <resultMap id="commentMap" type="com.web.blog.bean.Comment">
+<!--        <resultMap id="commentMap" type="com.web.blog.bean.Comment">
             <id property="id" column="id"></id>
             <result property="nickname" column="nickname"></result>
             <result property="email" column="email"></result>
@@ -46,6 +46,7 @@
         <select id="getReplyComments" parameterType="long" resultMap="commentMap">
             SELECT * FROM t_comment WHERE parent_comment_id = #{parentId};
         </select>-->
+
 
 
 </mapper>

@@ -64,11 +64,10 @@ public class CommentController {
      */
     @PostMapping(value = "/comments")
     public String postComment(Comment comment, HttpSession session) {
-
         Long blogId = comment.getBlogId();
         /*设置Blog*/
         comment.setBlog(blogService.getBlogDetail(blogId));
-        /*设置用户头像*/
+        /*设置用户头像(在这里，用户只有一个，所以头像都是一样的)*/
         User loginUser = (User) session.getAttribute("loginUser");
         if (loginUser != null) {
             comment.setAvatar(loginUser.getAvatar());

@@ -8,11 +8,9 @@ import com.web.blog.dto.BlogIndexShow;
 import com.web.blog.dto.BlogRecommend;
 import com.web.blog.dto.BlogShow;
 import com.web.blog.mapper.BlogMapper;
+import com.web.blog.mapper.CommentMapper;
 import com.web.blog.mapper.TagMapper;
-import com.web.blog.service.BlogService;
-import com.web.blog.service.LoginService;
-import com.web.blog.service.TagService;
-import com.web.blog.service.TypeService;
+import com.web.blog.service.*;
 import com.web.blog.utils.MD5ShiroUtils;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
@@ -43,6 +41,12 @@ class SpringbootWebBolgApplicationTests {
 
     @Autowired
     private LoginService loginService;
+
+    @Autowired
+    private CommentService commentService;
+
+    @Autowired
+    private CommentMapper commentMapper;
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;

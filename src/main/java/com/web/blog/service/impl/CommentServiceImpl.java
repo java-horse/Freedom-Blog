@@ -1,6 +1,7 @@
 package com.web.blog.service.impl;
 
 import com.web.blog.bean.Comment;
+import com.web.blog.mapper.BlogMapper;
 import com.web.blog.mapper.CommentMapper;
 import com.web.blog.service.CommentService;
 import org.springframework.beans.BeanUtils;
@@ -22,9 +23,13 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentMapper commentMapper;
 
+    @Autowired
+    private BlogMapper blogMapper;
+
 
     @Override
     public void saveComment(Comment comment) {
+        System.out.println(comment);
         //判断有没有在别人的评论上进行评论还是一个新的评论
         Long parentCommentId = comment.getParentCommentId();
         //没有父级评论默认是-1
@@ -39,7 +44,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<Comment> listCommentByBlogId(Long blogId) {
-        /*获取所有的父级评论（根据parentCommentId=-1）*/
         List<Comment> comments = commentMapper.getCommentParentCommentId(blogId);
         return eachComment(comments);
     }
