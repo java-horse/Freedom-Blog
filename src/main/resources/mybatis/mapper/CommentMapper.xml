@@ -21,7 +21,7 @@
     <select id="getCommentParentCommentId" parameterType="long" resultType="com.web.blog.bean.Comment">
         <include refid="selectComment"/>
         FROM t_comment
-        WHERE blog_id = #{blogId} ORDER BY create_time asc;
+        WHERE blog_id = #{blogId} ORDER BY create_time desc;
     </select>
 
     <select id="listComments" resultType="Comment">
@@ -32,20 +32,24 @@
         DELETE FROM t_comment WHERE id=#{id}
     </delete>
 
-<!--        <resultMap id="commentMap" type="com.web.blog.bean.Comment">
-            <id property="id" column="id"></id>
-            <result property="nickname" column="nickname"></result>
-            <result property="email" column="email"></result>
-            <result property="content" column="content"></result>
-            <result property="avatar" column="avatar"></result>
-            <result property="createTime" column="create_time"></result>
-            <result property="blogId" column="blog_id"></result>
-            <result property="parentCommentId" column="parent_comment_id"></result>
-            <collection property="replyComments" javaType="java.util.List" column="id" select="getReplyComments"/>
-        </resultMap>
-        <select id="getReplyComments" parameterType="long" resultMap="commentMap">
-            SELECT * FROM t_comment WHERE parent_comment_id = #{parentId};
-        </select>-->
+    <resultMap id="commentMap" type="com.web.blog.bean.Comment">
+        <id property="id" column="id"></id>
+        <result property="nickname" column="nickname"></result>
+        <result property="email" column="email"></result>
+        <result property="content" column="content"></result>
+        <result property="avatar" column="avatar"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="blogId" column="blog_id"></result>
+        <result property="parentCommentId" column="parent_comment_id"></result>
+        <collection property="replyComments" javaType="java.util.List" column="id" select="getReplyComments"/>
+    </resultMap>
+    <select id="getReplyComments" parameterType="long" resultMap="commentMap">
+            SELECT * FROM t_comment WHERE parent_comment_id=#{parentId};
+        </select>
+
+    <select id="getCommentParent" parameterType="long" resultType="Comment">
+            select * from t_comment where parent_comment_id=-1 and blog_id=#{blogId}
+    </select>
 
 
 

@@ -48,6 +48,12 @@ public class CommentController {
     }
 
 
+    /**
+     * 返回博客的具体评论信息
+     * @param blogId
+     * @param model
+     * @return
+     */
     @GetMapping(value = "/comments/{blogId}")
     private String commentsDisplay(@PathVariable(value = "blogId") Long blogId, Model model) {
         List<Comment> comments = commentService.listCommentByBlogId(blogId);
@@ -67,7 +73,7 @@ public class CommentController {
         Long blogId = comment.getBlogId();
         /*设置Blog*/
         comment.setBlog(blogService.getBlogDetail(blogId));
-        /*设置用户头像(在这里，用户只有一个，所以头像都是一样的)*/
+        /*设置用户头像(只要登录后进行评论的，用户头像都是相同的 ，用户只有一个，所以头像都是一样的)*/
         User loginUser = (User) session.getAttribute("loginUser");
         if (loginUser != null) {
             comment.setAvatar(loginUser.getAvatar());

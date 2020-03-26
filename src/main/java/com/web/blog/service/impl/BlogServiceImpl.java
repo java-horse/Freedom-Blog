@@ -123,9 +123,10 @@ public class BlogServiceImpl implements BlogService {
      */
     @Override
     public BlogDetail getBlogDetail(Long id) {
-        BlogDetail blogDetail = blogMapper.getBlogDetail(id);
         /*每次查看博客详情，views 加 1*/
         blogMapper.getBlogViews(id);
+
+        BlogDetail blogDetail = blogMapper.getBlogDetail(id);
         /*获取博客的所有标签*/
         ArrayList<Tag> tags = new ArrayList<>();
         List<Tag> tagsString = tagService.getTagsString(blogDetail.getTagIds());

@@ -14,7 +14,12 @@
 <br/><br/>
 <!--中间内容-->
 <br/><br/>
-<br/><br/>
+<div align="center">
+    <div class="ui small circular rotate left reveal image">
+        <img th:src="@{${session.loginUser.avatar}}" class="visible content">
+        <img th:src="@{${session.loginUser.avatar}}" class="hidden content">
+    </div>
+</div>
 <br/><br/>
 <div align="center">
     <form th:action="@{/admin/avatar}" method="post" enctype="multipart/form-data">

@@ -15,14 +15,18 @@ import java.util.List;
 @Repository
 public interface CommentMapper {
 
-   public void saveComment(Comment comment);
+    public void saveComment(Comment comment);
 
-   public Comment findByParentCommentId(@Param("parentCommentId") Long parentCommentId);
+    public Comment findByParentCommentId(@Param("parentCommentId") Long parentCommentId);
 
-   public List<Comment> getCommentParentCommentId(@Param("blogId") Long blogId);
+    public List<Comment> getCommentParentCommentId(@Param("blogId") Long blogId);
 
-   public List<Comment> listComments();
+    public List<Comment> listComments();
 
     public int deleteCommentById(@Param("id") Long id);
+
+    public List<Comment> getReplyComments(@Param("parentId") Long parentId);
+
+    List<Comment> getCommentParent(@Param("blogId") Long blogId);
 
 }

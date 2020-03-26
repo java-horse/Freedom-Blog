@@ -27,9 +27,12 @@ public class CommentServiceImpl implements CommentService {
     private BlogMapper blogMapper;
 
 
+    /**
+     * @param comment
+     * 保存评论（逻辑正确，层级关系正确）
+     */
     @Override
     public void saveComment(Comment comment) {
-        System.out.println(comment);
         //判断有没有在别人的评论上进行评论还是一个新的评论
         Long parentCommentId = comment.getParentCommentId();
         //没有父级评论默认是-1
@@ -42,11 +45,25 @@ public class CommentServiceImpl implements CommentService {
         commentMapper.saveComment(comment);
     }
 
+    /**
+     * 评论展示(整体逻辑生效)
+     * @param blogId
+     * @return
+     */
     @Override
     public List<Comment> listCommentByBlogId(Long blogId) {
-        List<Comment> comments = commentMapper.getCommentParentCommentId(blogId);
+        ArrayList<Comment> comments = new ArrayList<>();
+        List<Comment> commentParent = commentMapper.getCommentParent(blogId);
+        for (Comment comment : commentParent) {
+            List<Comment> replyComments = commentMapper.getReplyComments(comment.getId());
+            comment.setReplyComments(replyComments);
+            comments.add(comment);
+        }
         return eachComment(comments);
     }
+
+
+    /*====================下面两个使管理评论内容的方法=================*/
 
     @Override
     public List<Comment> listComments() {
@@ -66,6 +83,7 @@ public class CommentServiceImpl implements CommentService {
      * @return
      */
     private List<Comment> eachComment(List<Comment> comments) {
+        //复制一个新的list集合，防止在元数据发生错误
         List<Comment> commentsView = new ArrayList<>();
         for (Comment comment : comments) {
             Comment c = new Comment();
@@ -85,8 +103,11 @@ public class CommentServiceImpl implements CommentService {
     private void combineChildren(List<Comment> comments) {
 
         for (Comment comment : comments) {
+
             List<Comment> replys1 = comment.getReplyComments();
+
             for(Comment reply1 : replys1) {
+
                 //循环迭代，找出子代，存放在tempReplys中
                 recursively(reply1);
             }
@@ -105,7 +126,7 @@ public class CommentServiceImpl implements CommentService {
      * @return
      */
     private void recursively(Comment comment) {
-        tempReplys.add(comment);//顶节点添加到临时存放集合
+        tempReplys.add(comment);//顶节点（每个父评论下的第一个子评论）添加到临时存放集合
         if (comment.getReplyComments().size()>0) {
             List<Comment> replys = comment.getReplyComments();
             for (Comment reply : replys) {

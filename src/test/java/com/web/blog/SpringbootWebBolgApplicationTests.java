@@ -1,6 +1,7 @@
 package com.web.blog;
 
 import com.web.blog.bean.Blog;
+import com.web.blog.bean.Comment;
 import com.web.blog.bean.Tag;
 import com.web.blog.bean.Type;
 import com.web.blog.dto.BlogDetail;
@@ -194,6 +195,33 @@ class SpringbootWebBolgApplicationTests {
         List<Object> blogindexshow = redisTemplate.opsForList().range("blogindexshow", 0, -1);
         for (Object o : blogindexshow) {
             System.out.println(o);
+        }
+    }
+
+
+    @Test
+    public void test14() {
+        List<Comment> comments = commentMapper.getReplyComments(-1L);
+        for (Comment comment : comments) {
+            System.out.println(comment);
+        }
+    }
+
+    @Test
+    public void test15() {
+        List<Comment> commentParent = commentMapper.getCommentParent(10L);
+        for (Comment comment : commentParent) {
+            List<Comment> replyComments = commentMapper.getReplyComments(comment.getId());
+            comment.setReplyComments(replyComments);
+            System.out.println(comment);
+        }
+    }
+
+    @Test
+    public void test16() {
+        List<Comment> commentList = commentService.listCommentByBlogId(10L);
+        for (Comment comment : commentList) {
+            System.out.println(comment);
         }
     }
 
