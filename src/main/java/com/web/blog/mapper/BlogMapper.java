@@ -49,12 +49,14 @@ public interface BlogMapper {
 
     /**
      * 传递展示index页面的元素
+     *
      * @return
      */
     public List<BlogIndexShow> getBlogIndexShow();
 
     /**
      * 传递是否推荐（应用于最新推荐模块）
+     *
      * @return
      */
     @Select("SELECT id,title,recommend FROM t_blog ORDER BY update_time DESC LIMIT 0, 8")
@@ -62,6 +64,7 @@ public interface BlogMapper {
 
     /**
      * 根据id（type.id也就是typeId）查询每种type.id对应的所有blog信息
+     *
      * @param typeId
      * @return
      */
@@ -72,6 +75,7 @@ public interface BlogMapper {
     /**
      * 根据id（tag.id）模糊查询每种tag.id对应的所有blog信息
      * 注意：注解版的模糊查询一定要写 LIKE CONCAT('%',#{},'%')的形式，否则会报错
+     *
      * @param tagId
      * @return
      */
@@ -81,6 +85,7 @@ public interface BlogMapper {
 
     /**
      * 全局搜索
+     *
      * @param query
      * @return
      */
@@ -89,6 +94,7 @@ public interface BlogMapper {
 
     /**
      * 博客详情页
+     *
      * @param id
      * @return
      */
@@ -96,6 +102,7 @@ public interface BlogMapper {
 
     /**
      * 增加views
+     *
      * @param id
      * @return
      */
@@ -108,15 +115,21 @@ public interface BlogMapper {
 
     public List<BlogShow> archivesListBlog(@Param("year") String year);
 
-    @Select("select count(*) from t_blog")
+    @Select("select count(1) from t_blog")
     public int blogCount();
 
     /*------------------动态sql练习-----------------*/
-    public List<Blog> findBlogsByforEach(Map<String,Object> map);
+    public List<Blog> findBlogsByforEach(@Param("map") Map<String, Object> map);
 
-    public List<Blog> findBlogsByChoose(Map<String,Object> map);
+    public List<Blog> findBlogsByChoose(@Param("map") Map<String, Object> map);
 
     List<Blog> getBlogByTipeId(@Param("typeId") Long id);
 
     List<Blog> findBlogsByTagId(@Param("tagId") Long id);
+
+    @Select("select views from t_blog where id=#{id} ")
+    Long getBlogViewsById(@Param("id") Long id);
+
+    @Update("update t_blog set views=#{views}+1 where id=#{id}")
+    void updateBlogViews(@Param("id") Long id, @Param("views") Integer views);
 }

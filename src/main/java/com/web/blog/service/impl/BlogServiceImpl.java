@@ -1,5 +1,6 @@
 package com.web.blog.service.impl;
 
+import com.web.blog.base.BlogKeys;
 import com.web.blog.bean.Blog;
 import com.web.blog.bean.Tag;
 import com.web.blog.dto.*;
@@ -7,7 +8,10 @@ import com.web.blog.mapper.BlogMapper;
 import com.web.blog.service.BlogService;
 import com.web.blog.service.TagService;
 import com.web.blog.utils.MarkdownUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,11 +25,16 @@ import java.util.*;
 @Transactional
 public class BlogServiceImpl implements BlogService {
 
+    private final Logger logger = LoggerFactory.getLogger(BlogServiceImpl.class);
+
     @Autowired
     private BlogMapper blogMapper;
 
     @Autowired
     private TagService tagService;
+
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Transactional
     @Override
@@ -83,10 +92,11 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<BlogIndexShow> getBlogIndexShow() {
         return blogMapper.getBlogIndexShow();
-}
+    }
 
     /**
      * 判断recommend是否为true,决定是否推荐到index页面
+     *
      * @return
      */
     @Override
@@ -117,16 +127,29 @@ public class BlogServiceImpl implements BlogService {
     }
 
     /**
-     * 博客详情页
+     * 博客详情页(添加redis)
+     * 为什么views增加1走后，再查出来的值还是加1之前的值？？？
      * @param id
      * @return
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public BlogDetail getBlogDetail(Long id) {
-        /*每次查看博客详情，views 加 1*/
-        blogMapper.getBlogViews(id);
-
-        BlogDetail blogDetail = blogMapper.getBlogDetail(id);
+        BlogDetail blogDetail;
+        String key = BlogKeys.getKey(BlogKeys.BLOG.name()) + id;
+        String viewKey = key + BlogKeys.getKey(BlogKeys.VIEW.name());
+        if (redisTemplate.hasKey(key)) {
+            redisTemplate.opsForValue().increment(viewKey);
+            Integer views = (Integer) redisTemplate.opsForValue().get(viewKey);
+            blogMapper.updateBlogViews(id, views);
+            blogDetail = (BlogDetail) redisTemplate.opsForValue().get(key);
+            blogDetail.setViews(views + 1);
+        } else {
+            blogMapper.getBlogViews(id);
+            redisTemplate.opsForValue().set(viewKey, blogMapper.getBlogViewsById(id));
+            blogDetail = blogMapper.getBlogDetail(id);
+            redisTemplate.opsForValue().set(key, blogDetail);
+        }
         /*获取博客的所有标签*/
         ArrayList<Tag> tags = new ArrayList<>();
         List<Tag> tagsString = tagService.getTagsString(blogDetail.getTagIds());
