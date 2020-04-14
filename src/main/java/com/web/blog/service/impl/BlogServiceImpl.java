@@ -66,7 +66,12 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public int updateBlog(BlogShow blogShow) {
-        return blogMapper.updateBlog(blogShow);
+        int i = blogMapper.updateBlog(blogShow);
+        String key = BlogKeys.getKey(BlogKeys.BLOG.name()) + blogShow.getId();
+        if (redisTemplate.hasKey(key)) {
+            redisTemplate.opsForValue().set(key, blogMapper.getBlogDetail(blogShow.getId()));
+        }
+        return i;
     }
 
     @Transactional
