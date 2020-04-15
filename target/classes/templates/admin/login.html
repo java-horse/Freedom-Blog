@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../static/css/me.css">
 </head>
 <body>
+<!--js动效-->
+<div id="particles-js"></div>
 <br>
 <br>
 <br>
@@ -32,7 +34,7 @@
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" id="pass" placeholder="密码" onblur="p()"/>
+                                <input type="password" name="password" id="pass" placeholder="密&emsp;码" onblur="p()"/>
                             </div>
                             <span id="passInfo"></span>
                         </div>
@@ -78,6 +80,7 @@
             }
         }
     });
+
     //点击刷新验证码
     function refresh() {
         document.getElementById('captcha_img').src = "/kaptcha?" + Math.random();

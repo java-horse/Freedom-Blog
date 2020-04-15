@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * @author mabin
  * @date 2020/4/14 12:59
+ * 拼接redis的key值
  */
 
 public enum BlogKeys {

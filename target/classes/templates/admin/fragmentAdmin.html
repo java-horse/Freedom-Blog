@@ -12,8 +12,9 @@
     <link rel="stylesheet" th:href="@{/lib/prism/prism.css}">
     <link rel="stylesheet" th:href="@{/lib/tocbot/tocbot.css}">
     <link rel="stylesheet" th:href="@{/css/me.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <!--引入Markdown的CSS样式-->
-    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.css}">
+    <link rel="stylesheet" th:href="@{/lib/editormd/css/editormd.css}">
 
     <!--script（jquery.min.js文件必须放在最上面，否则会报错）-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
@@ -29,12 +30,6 @@
     <script th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
     <!--js动态特效-->
     <script th:src="@{/js/emoji.js}"></script>
-    <script th:src="@{/js/activate-power-mode.js}"></script>
-    <script>
-        POWERMODE.colorful = true; // 控制开启/关闭礼花特效
-        POWERMODE.shake = true;  //控制开启/关闭屏幕震动（开关好像失效了）
-        document.body.addEventListener('input', POWERMODE);
-    </script>
 
     <!--ajax验证提示效果-->
     <script>
